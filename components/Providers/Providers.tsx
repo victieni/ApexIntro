@@ -1,11 +1,14 @@
 import { CredentialsProvider } from "@/contexts/credentials.context";
-import { getCredentials } from "@/lib/actions/globals.actions";
+import { DesignProvider } from "@/contexts/design.context";
+import { getCredentials, getDesign } from "@/lib/actions/globals.actions";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "next-themes";
 import type { ReactNode } from "react";
 
 export default async function Providers({ children }: { children: ReactNode }) {
 	const credentials = await getCredentials();
+		const design = await getDesign();
+	
 
 	return (
 		<ThemeProvider
@@ -16,7 +19,7 @@ export default async function Providers({ children }: { children: ReactNode }) {
 		>
 			<ClerkProvider>
 				<CredentialsProvider credentialsInit={credentials}>
-					{children}
+					<DesignProvider designInit={design}>{children}</DesignProvider>
 				</CredentialsProvider>
 			</ClerkProvider>
 		</ThemeProvider>

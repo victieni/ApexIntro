@@ -28,8 +28,18 @@ export const Sections: GlobalConfig = {
 						{
 							name: "CanvasRevealEffect",
 							fields: [
-								{ name: "title", type: "text", required: true },
-								{ name: "icon", type: "select", options: LUCIDE_ICON_NAMES },
+								{
+									name: "canva",
+									type: "array",
+									fields: [
+										{ name: "title", type: "text", required: true },
+										{
+											name: "icon",
+											type: "select",
+											options: LUCIDE_ICON_NAMES,
+										},
+									],
+								},
 							],
 						},
 						{ name: "AppleCardsCarousel", fields: [] },

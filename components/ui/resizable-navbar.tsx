@@ -1,5 +1,6 @@
 "use client";
-import { cn } from "@/lib/utils";
+import { useDesign } from "@/contexts/design.context";
+import { cn, getHeaderFont } from "@/lib/utils";
 import { Menu, X, ZodiacCancer } from "lucide-react";
 import { DynamicIcon, type IconName } from "lucide-react/dynamic";
 import {
@@ -11,6 +12,8 @@ import {
 import Link from "next/link";
 
 import React, { useRef, useState } from "react";
+import Heading from "../layout/Heading";
+import { useCredentials } from "@/contexts/credentials.context";
 
 interface NavbarProps {
 	children: React.ReactNode;
@@ -140,9 +143,9 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
 							className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
 						/>
 					)}
-					<div className="flex items-center gap-x-1">
+					<div className="relative z-20 flex items-center gap-x-1">
 						<DynamicIcon name={item.icon} size={20} />
-						<span className="relative z-20">{item.name}</span>
+						<span className="">{item.name}</span>
 					</div>
 				</a>
 			))}
@@ -236,13 +239,18 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = () => {
+	const {
+		credentials: { appTitle },
+	} = useCredentials();
 	return (
 		<Link
 			href="/"
 			className="relative z-20 mr-4 flex items-center space-x-1 px-2 py-1 text-sm font-normal text-primary"
 		>
 			<ZodiacCancer size={30} />
-			<span className="font-medium text-lg sm:text-xl">ApexIntro</span>
+			<Heading className={cn(`font-medium text-lg sm:text-xl `)}>
+				{appTitle}
+			</Heading>
 		</Link>
 	);
 };

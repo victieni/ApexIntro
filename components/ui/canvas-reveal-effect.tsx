@@ -2,10 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
-import { motion } from "motion/react";
 
 export const CanvasRevealEffect = ({
 	animationSpeed = 0.4,
@@ -244,13 +243,14 @@ const ShaderMaterial = ({
 	const ref = useRef<THREE.Mesh>();
 	let lastFrameTime = 0;
 
+	// ! use "timer" instead of "clock"
 	useFrame(({ clock }) => {
 		if (!ref.current) return;
 		const timestamp = clock.getElapsedTime();
 		if (timestamp - lastFrameTime < 1 / maxFps) {
 			return;
 		}
-		lastFrameTime = timestamp;
+		lastFrameTime = timestamp;	
 
 		const material: any = ref.current.material;
 		const timeLocation = material.uniforms.u_time;

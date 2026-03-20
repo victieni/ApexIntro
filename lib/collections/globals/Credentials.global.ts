@@ -5,7 +5,7 @@ import type { GlobalConfig } from "payload";
 export const Credentials: GlobalConfig = {
 	slug: "credentials",
 	fields: [
-		{ name: "AppTitle", type: "text", required: true },
+		{ name: "appTitle", type: "text", required: true },
 		{
 			name: "hero",
 			type: "group",
@@ -14,7 +14,7 @@ export const Credentials: GlobalConfig = {
 				{ name: "highlightText", type: "textarea", required: true },
 				{ name: "callToActionText", type: "text", required: true },
 				{
-					name: "CallToActionButtonText",
+					name: "callToActionButtonText",
 					type: "text",
 					defaultValue: "Get Started",
 					required: true,

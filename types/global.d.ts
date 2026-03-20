@@ -9,4 +9,5 @@ declare global {
 	type IHeroBg = Design["heroBg"];
 
 	type ISection = NonNullable<Section["sections"]>[number];
+	type ICanva = NonNullable<ISection["CanvasRevealEffect"]>["canva"];
 }

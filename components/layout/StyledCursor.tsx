@@ -22,7 +22,12 @@ export default function StyledCursor({ children }: { children?: ReactNode }) {
 			</ClickSpark>
 		);
 	} else if (cursorVariant === eCursorVariants.SplashCursor) {
-		return <SplashCursor />;
+		return (
+			<>
+				<SplashCursor />
+				{children}
+			</>
+		);
 	}
 	return <></>;
 }
