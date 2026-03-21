@@ -1,9 +1,7 @@
 "use server";
 
-import { getPayload } from "payload";
 import config from "@payload-config";
-import { unstable_cache as cache } from "next/cache";
-import { Rethink_Sans } from "next/font/google";
+import { getPayload } from "payload";
 
 const payload = await getPayload({ config });
 

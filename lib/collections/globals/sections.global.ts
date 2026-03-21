@@ -42,12 +42,76 @@ export const Sections: GlobalConfig = {
 								},
 							],
 						},
+						{
+							name: "SnapCursor",
+							fields: [
+								{
+									name: "boxes",
+									type: "array",
+									fields: [{ name: "body", type: "textarea", required: true }],
+								},
+							],
+						},
+						{
+							name: "BentoGrid",
+							fields: [
+								{
+									name: "items",
+									type: "array",
+									fields: [
+										{ name: "title", type: "text", required: true },
+										{ name: "description", type: "textarea", required: true },
+										{ name: "header", type: "text" },
+										{
+											name: "icon",
+											type: "select",
+											options: LUCIDE_ICON_NAMES,
+										},
+									],
+								},
+							],
+						},
+						{
+							name: "MagicBento",
+							fields: [
+								{
+									name: "items",
+									type: "array",
+									fields: [
+										// ? Test props
+										{ name: "color", type: "text" },
+										{ name: "title", type: "text" },
+										{ name: "description", type: "text" },
+										{ name: "label", type: "text" },
+										{ name: "textAutoHide", type: "checkbox" },
+										{ name: "disableAnimations", type: "checkbox" },
+									],
+								},
+							],
+						},
+						{
+							name: "AnimatedTestimonials",
+							fields: [
+								{
+									name: "testimonials",
+									type: "array",
+									fields: [
+										{ name: "quote", type: "text", required: true },
+										{ name: "name", type: "text", required: true },
+										{
+											name: "designation",
+											type: "text",
+											required: true,
+											defaultValue: "client",
+										},
+										{ name: "imageUrl", type: "text" },
+									],
+								},
+							],
+						},
 						{ name: "AppleCardsCarousel", fields: [] },
 						{ name: "FocusCardsImageGallery", fields: [] },
-						{ name: "BentoGrid", fields: [] },
-						{ name: "MagicBento", fields: [] },
 						{ name: "CircularGallery", fields: [] },
-						{ name: "SnapCursor", fields: [] },
 						{ name: "SpotLightCards", fields: [] },
 					],
 				},

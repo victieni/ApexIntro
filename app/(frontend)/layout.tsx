@@ -21,19 +21,19 @@ export default async function RootLayout({
 
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<Providers>
-				<ScrollArea className="h-[100vh]">
-					<body
-						// className={`${geistSans.variable} ${geistMono.variable} antialiased p-3`}
-						className={` ${getAppFont(appFont).className} antialiased`}
-					>
+			<ScrollArea className="h-[100vh]">
+				<body
+					// className={`${geistSans.variable} ${geistMono.variable} antialiased p-3`}
+					className={` ${getAppFont(appFont).className} antialiased relative`}
+				>
+					<Providers>
 						<AppNavbar className="sticky top-5 z-30" />
 						<main className="p-3 overflow-x-hidden max-w-screen">
 							{children}
 						</main>
-					</body>
-				</ScrollArea>
-			</Providers>
+					</Providers>
+				</body>
+			</ScrollArea>
 		</html>
 	);
 }

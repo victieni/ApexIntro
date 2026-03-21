@@ -1,9 +1,9 @@
+import type { ReactNode } from "react";
 import { CredentialsProvider } from "@/contexts/credentials.context";
 import { DesignProvider } from "@/contexts/design.context";
 import { getCredentials, getDesign } from "@/lib/actions/globals.actions";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "next-themes";
-import type { ReactNode } from "react";
 
 export default async function Providers({ children }: { children: ReactNode }) {
 	const credentials = await getCredentials();

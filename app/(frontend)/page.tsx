@@ -1,7 +1,11 @@
 import Heading from "@/components/layout/Heading";
 import StyledCursor from "@/components/layout/StyledCursor";
+import { AnimatedTestimonialSection } from "@/components/sections/AnimatedTestimonialsSection";
+import BentoGridSection from "@/components/sections/BentoGridSection";
 import CanvasRevealEffectSection from "@/components/sections/CanvasRevealEffectSection";
 import HeroSection from "@/components/sections/HeroSection";
+import MagicBentoGridSection from "@/components/sections/MagicBentoGridSection";
+import SnapCursorSection from "@/components/sections/SnapCursorSection";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { getSections } from "@/lib/actions/globals.actions";
 import { cn } from "@/lib/utils";
@@ -11,7 +15,7 @@ export default async function Home() {
 	const { sections } = await getSections();
 	return (
 		<StyledCursor>
-			{/* TEst cursor variants */}
+			{/* Test cursor variants */}
 			<HeroSection />
 
 			<div className="space-y-4 mt-4">
@@ -31,7 +35,7 @@ const SectionContainer = ({
 	className?: string;
 }) => {
 	return (
-		<div className={cn("", className)}>
+		<div className={cn("minh[80vh] ", className)}>
 			<div>
 				<Heading>{section.title}</Heading>
 			</div>
@@ -49,10 +53,23 @@ const SectionContainer = ({
 				)}
 			</div>
 
-			<div>
+			<div className="mt-10">
 				{section.variant === eSectionVariants.CanvasRevealEffect ? (
 					<CanvasRevealEffectSection
 						canva={section.CanvasRevealEffect?.canva}
+					/>
+				) : section.variant === eSectionVariants.SnapCursor ? (
+					<SnapCursorSection
+						boxes={section.SnapCursor?.boxes}
+						className="mt-5"
+					/>
+				) : section.variant === eSectionVariants.BentoGrid ? (
+					<BentoGridSection items={section.BentoGrid?.items} />
+				) : section.variant === eSectionVariants.MagicBento ? (
+					<MagicBentoGridSection items={section.MagicBento?.items} />
+				) : section.variant === eSectionVariants.AnimatedTestimonials ? (
+					<AnimatedTestimonialSection
+						testimonials={section.AnimatedTestimonials?.testimonials}
 					/>
 				) : (
 					"Coming soon..."

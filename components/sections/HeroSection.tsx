@@ -1,12 +1,12 @@
 "use client";
 
+import { useRef, type ComponentProps } from "react";
 import { useCredentials } from "@/contexts/credentials.context";
 import { eHeroBg } from "@/types/enums";
-import { motion } from "motion/react";
-import type { ComponentProps } from "react";
-import { HeroHighlight, Highlight } from "../ui/hero-highlight";
-import MyBtn from "../Btns/MyBtn";
+import { motion, useScroll, useTransform } from "motion/react";
 import CTABtn from "../Btns/CTABtn";
+import { HeroHighlight, Highlight } from "../ui/hero-highlight";
+import { GoogleGeminiEffect } from "../ui/google-gemini-effect";
 import { SparklesCore } from "../ui/sparkles";
 
 export default function HeroSection({
@@ -18,14 +18,14 @@ export default function HeroSection({
 		credentials: { hero },
 	} = useCredentials();
 
-	console.log(hero);
-
 	return (
 		<section {...props}>
 			{hero.heroBg === eHeroBg.HeroHighlight ? (
 				<HeroHighlightSection />
 			) : hero.heroBg === eHeroBg.Sparkles ? (
 				<SparklesHeroSection />
+			) : hero.heroBg === eHeroBg.GeminiEffect ? (
+				<GeminiEffectSection />
 			) : (
 				"Coming soon"
 			)}
@@ -66,12 +66,12 @@ const HeroHighlightSection = () => {
 
 const SparklesHeroSection = () => {
 	const {
-		credentials: { AppTitle, hero },
+		credentials: { appTitle, hero },
 	} = useCredentials();
 	return (
 		<div className="h-[40rem] w-full bg-background flex flex-col items-center justify-center overflow-hidden rounded-md">
 			<h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
-				{AppTitle}
+				{appTitle}
 			</h1>
 			<div className="w-[40rem] h-40 relative">
 				{/* Gradients */}
@@ -101,3 +101,45 @@ const SparklesHeroSection = () => {
 		</div>
 	);
 };
+
+function GeminiEffectSection() {
+	const {
+		credentials: { appTitle, hero },
+	} = useCredentials();
+
+	const ref = useRef(null);
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ["start start", "end start"],
+	});
+
+	const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
+	const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
+	const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
+	const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
+	const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
+
+	return (
+		<div
+			className="h-[200vh] bg-background w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
+			ref={ref}
+		>
+			<GoogleGeminiEffect
+				title={appTitle}
+				description={hero.mainText}
+				pathLengths={[
+					pathLengthFirst,
+					pathLengthSecond,
+					pathLengthThird,
+					pathLengthFourth,
+					pathLengthFifth,
+				]}
+			/>
+
+			<div className="mt-5 flex flex-col items-center justify-center gap-3!">
+				<p className="text-base! font-medium">{hero.callToActionText}</p>
+				<CTABtn />
+			</div>
+		</div>
+	);
+}

@@ -30,13 +30,6 @@ export default function CanvasRevealEffectSection({
 					<div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
 				</CanvasRevealEffect.Card>
 			))}
-			{/* <CanvasRevealEffect.Card title="Munni is Aditi" icon={<DynamicIcon />}>
-				<CanvasRevealEffect
-					animationSpeed={3}
-					containerClassName="bg-sky-600"
-					colors={[[125, 211, 252]]}
-				/>
-			</CanvasRevealEffect.Card> */}
 		</div>
 	);
 }

@@ -10,4 +10,10 @@ declare global {
 
 	type ISection = NonNullable<Section["sections"]>[number];
 	type ICanva = NonNullable<ISection["CanvasRevealEffect"]>["canva"];
+	type ISnapBoxes = NonNullable<ISection["SnapCursor"]>["boxes"];
+	type IBentoItems = NonNullable<ISection["BentoGrid"]>["items"];
+	type IMagicBentoItems = NonNullable<ISection["MagicBento"]>["items"];
+	type IAnimatedTestimonials = NonNullable<
+		ISection["AnimatedTestimonials"]
+	>["testimonials"];
 }

@@ -1,18 +1,19 @@
 export enum eHeroBg {
-	LiquidEther = "Liquid Ether",
-	LightPillar = "Light Pillar",
-	RippleGrid = "Ripple Grid",
-	DotGrid = "Dot Grid",
+	LiquidEther = "Liquid_Ether",
+	LightPillar = "Light_Pillar",
+	RippleGrid = "Ripple_Grid",
+	DotGrid = "Dot_Grid",
 	ORB = "Orb",
 	Galaxy = "Galaxy",
-	HeroHighlight = "Hero Highlight",
+	HeroHighlight = "Hero_Highlight",
 	Sparkles = "Sparkles",
+	GeminiEffect = "Gemini_Effect",
 }
 
 export enum eHeroHighlightVariants {
 	Shuffle = "Shuffle", // react bits
-	GlitchText = "Glitch Text",
-	CanvasText = "Canvas Text",
+	GlitchText = "Glitch_Text",
+	CanvasText = "Canvas_Text",
 	PointerHighlighter = "Pointer_highlighter",
 }
 
@@ -26,8 +27,8 @@ export enum eSectionVariants {
 	SpotLightCards = "Spot_light_cards",
 	// React Beats
 	MagicBento = "Magic_Bento",
-	CircularGallery = "Circular Gallery",
-	SnapCursor = "Snap cursor",
+	CircularGallery = "Circular_Gallery",
+	SnapCursor = "Snap_Cursor",
 }
 
 export enum eCTAVariants {}

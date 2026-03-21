@@ -54,3 +54,10 @@ export const getAppFont = (appFont: IDesign["appFont"]) => {
 			return poppinsFont;
 	}
 };
+
+export function getRandomNumber(min: number = 0.3, max: number = 1.0): number {
+	// Generate random number, round to 1 decimal, and ensure it's within range
+	// const randomValue = Math.random() * (max - min) + min;
+	// return Math.round(randomValue * 10) / 10;
+	return Math.round((Math.random() * (max - min) + min));
+}
