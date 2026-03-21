@@ -2199,6 +2199,8 @@ export interface Section {
           | 'Canvas_Reveal_Effect'
           | 'Animated_Testimonials'
           | 'Spot_light_cards'
+          | 'Parallax_Grid_Gallery'
+          | 'Animated_Tabs'
           | 'Magic_Bento'
           | 'Circular_Gallery'
           | 'Snap_Cursor';
@@ -5947,7 +5949,6 @@ export interface Section {
         MagicBento?: {
           items?:
             | {
-                color?: string | null;
                 title?: string | null;
                 description?: string | null;
                 label?: string | null;
@@ -5964,6 +5965,19 @@ export interface Section {
                 name: string;
                 designation: string;
                 imageUrl?: string | null;
+                id?: string | null;
+              }[]
+            | null;
+        };
+        ParallaxGridGallery?: {
+          images?: string[] | null;
+        };
+        AnimatedTabs?: {
+          tabs?:
+            | {
+                tabName: string;
+                title: string;
+                imageUrl: string;
                 id?: string | null;
               }[]
             | null;
@@ -6001,6 +6015,7 @@ export interface Credential {
           | 'Hero_Highlight'
           | 'Sparkles'
           | 'Gemini_Effect'
+          | 'Vortex_Background'
         )
       | null;
   };
@@ -7944,7 +7959,6 @@ export interface SectionsSelect<T extends boolean = true> {
               items?:
                 | T
                 | {
-                    color?: T;
                     title?: T;
                     description?: T;
                     label?: T;
@@ -7962,6 +7976,23 @@ export interface SectionsSelect<T extends boolean = true> {
                     quote?: T;
                     name?: T;
                     designation?: T;
+                    imageUrl?: T;
+                    id?: T;
+                  };
+            };
+        ParallaxGridGallery?:
+          | T
+          | {
+              images?: T;
+            };
+        AnimatedTabs?:
+          | T
+          | {
+              tabs?:
+                | T
+                | {
+                    tabName?: T;
+                    title?: T;
                     imageUrl?: T;
                     id?: T;
                   };

@@ -79,7 +79,7 @@ export const Sections: GlobalConfig = {
 									type: "array",
 									fields: [
 										// ? Test props
-										{ name: "color", type: "text" },
+										// { name: "color", type: "text" },
 										{ name: "title", type: "text" },
 										{ name: "description", type: "text" },
 										{ name: "label", type: "text" },
@@ -105,6 +105,24 @@ export const Sections: GlobalConfig = {
 											defaultValue: "client",
 										},
 										{ name: "imageUrl", type: "text" },
+									],
+								},
+							],
+						},
+						{
+							name: "ParallaxGridGallery",
+							fields: [{ name: "images", type: "text", hasMany: true }],
+						},
+						{
+							name: "AnimatedTabs",
+							fields: [
+								{
+									name: "tabs",
+									type: "array",
+									fields: [
+										{ name: "tabName", type: "text", required: true },
+										{ name: "title", type: "text", required: true },
+										{ name: "imageUrl", type: "text", required: true },
 									],
 								},
 							],

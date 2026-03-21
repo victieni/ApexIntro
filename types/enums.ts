@@ -5,9 +5,11 @@ export enum eHeroBg {
 	DotGrid = "Dot_Grid",
 	ORB = "Orb",
 	Galaxy = "Galaxy",
+
 	HeroHighlight = "Hero_Highlight",
 	Sparkles = "Sparkles",
 	GeminiEffect = "Gemini_Effect",
+	VortexBackground = "Vortex_Background",
 }
 
 export enum eHeroHighlightVariants {
@@ -25,6 +27,9 @@ export enum eSectionVariants {
 	CanvasRevealEffect = "Canvas_Reveal_Effect",
 	AnimatedTestimonials = "Animated_Testimonials",
 	SpotLightCards = "Spot_light_cards",
+
+	ParallaxGridGallery = "Parallax_Grid_Gallery",
+	AnimatedTabs = "Animated_Tabs",
 	// React Beats
 	MagicBento = "Magic_Bento",
 	CircularGallery = "Circular_Gallery",

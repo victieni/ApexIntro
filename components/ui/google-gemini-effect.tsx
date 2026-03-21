@@ -2,6 +2,8 @@
 import { cn } from "@/lib/utils";
 import { motion, MotionValue } from "motion/react";
 import React from "react";
+import CTABtn from "../Btns/CTABtn";
+import Heading from "../layout/Heading";
 
 const transition = {
 	duration: 0,
@@ -21,16 +23,16 @@ export const GoogleGeminiEffect = ({
 }) => {
 	return (
 		<div className={cn("sticky top-10", className)}>
-			<p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
-				{title || `Build with Aceternity UI`}
-			</p>
+			<div className="flex items-center justify-center">
+				<Heading className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-primary to-primary/50">
+					{title}
+				</Heading>
+			</div>
 			<p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">
 				{description}
 			</p>
 			<div className="w-full h-[890px] -top-10 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
-				<button className="font-bold bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
-					codemedic.com
-				</button>
+				<CTABtn className="font-bold bg-white! rounded-full md:px-8 md:py-3 px-4 py-2 md:mt-24 mt-8 z-30 md:text-lg text-black! text-base w-fit mx-auto " />
 			</div>
 			<svg
 				width="1440"
