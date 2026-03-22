@@ -566,7 +566,7 @@ class App {
 				text: "Palm Trees",
 			},
 		];
-		const galleryItems = items && items.length ? items : defaultItems;
+		const galleryItems = items ?? defaultItems;
 		this.mediasImages = galleryItems.concat(galleryItems);
 		this.medias = this.mediasImages.map((data, index) => {
 			return new Media({

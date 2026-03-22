@@ -24,7 +24,7 @@ export const GoogleGeminiEffect = ({
 	return (
 		<div className={cn("sticky top-10", className)}>
 			<div className="flex items-center justify-center">
-				<Heading className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-primary to-primary/50">
+				<Heading className="text-3xl md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-primary to-primary/50">
 					{title}
 				</Heading>
 			</div>

@@ -84,7 +84,7 @@ const SectionContainer = ({
 				) : section.variant === eSectionVariants.FocusCardsGallery ? (
 					<FocusCardsGallerySection cards={section.FocusCardsGallery?.cards!} />
 				) : section.variant === eSectionVariants.CircularGallery ? (
-					<CircularGallerySection />
+					<CircularGallerySection cards={section.CircularGallery?.cards} />
 				) : (
 					"Coming soon..."
 				)}
