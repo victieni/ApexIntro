@@ -110,10 +110,7 @@ export const Sections: GlobalConfig = {
 								},
 							],
 						},
-						{
-							name: "ParallaxGridGallery",
-							fields: [{ name: "images", type: "text", hasMany: true }],
-						},
+
 						{
 							name: "AnimatedTabs",
 							fields: [
@@ -150,7 +147,13 @@ export const Sections: GlobalConfig = {
 					tabs: [
 						{
 							name: "Marquee3DGallery",
-							fields: [{ name: "imageUrls", type: "text", hasMany: true }],
+							fields: [
+								{
+									name: "images",
+									type: "array",
+									fields: [{ name: "imageUrl", type: "text" }],
+								},
+							],
 						},
 						{
 							name: "FocusCardsGallery",
@@ -165,8 +168,30 @@ export const Sections: GlobalConfig = {
 								},
 							],
 						},
-						{ name: "CircularGallery", fields: [] },
+						{
+							name: "CircularGallery",
+							fields: [
+								{
+									name: "cards",
+									type: "array",
+									fields: [
+										{ name: "title", type: "text", required: true },
+										{ name: "imageUrl", type: "text", required: true },
+									],
+								},
+							],
+						},
 						{ name: "SpotLightCards", fields: [] },
+						{
+							name: "ParallaxGridGallery",
+							fields: [
+								{
+									name: "images",
+									type: "array",
+									fields: [{ name: "imageUrl", type: "text", required: true }],
+								},
+							],
+						},
 						{
 							name: "MarqueeStandard",
 							fields: [

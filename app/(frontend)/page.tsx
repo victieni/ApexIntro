@@ -4,6 +4,7 @@ import { AnimatedTabsSection } from "@/components/sections/AnimatedTabsSection";
 import { AnimatedTestimonialSection } from "@/components/sections/AnimatedTestimonialsSection";
 import BentoGridSection from "@/components/sections/BentoGridSection";
 import CanvasRevealEffectSection from "@/components/sections/CanvasRevealEffectSection";
+import CircularGallerySection from "@/components/sections/CircularGallerySection";
 import { FocusCardsGallerySection } from "@/components/sections/FocusCardsGallerySection";
 import HeroSection from "@/components/sections/HeroSection";
 import MagicBentoGridSection from "@/components/sections/MagicBentoGridSection";
@@ -76,14 +77,15 @@ const SectionContainer = ({
 					/>
 				) : section.variant === eSectionVariants.ParallaxGridGallery ? (
 					<ParallaxScrollGallerySection
-						images={section.ParallaxGridGallery?.images!}
+						images={section.ParallaxGridGallery?.images}
 					/>
 				) : section.variant === eSectionVariants.AnimatedTabs ? (
 					<AnimatedTabsSection tabs={section.AnimatedTabs?.tabs} />
 				) : section.variant === eSectionVariants.FocusCardsGallery ? (
 					<FocusCardsGallerySection cards={section.FocusCardsGallery?.cards!} />
+				) : section.variant === eSectionVariants.CircularGallery ? (
+					<CircularGallerySection />
 				) : (
-					
 					"Coming soon..."
 				)}
 			</div>

@@ -1,11 +1,11 @@
 import AppNavbar from "@/components/layout/AppNavbar";
 import Providers from "@/components/Providers/Providers";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import type { Metadata } from "next";
-import { poppinsFont } from "../fonts";
-import "../globals.css";
 import { getDesign } from "@/lib/actions/globals.actions";
 import { getAppFont } from "@/lib/utils";
+import { GooeyToaster } from "goey-toast";
+import type { Metadata } from "next";
+import "../globals.css";
 
 export const metadata: Metadata = {
 	title: "Apex Intro",
@@ -23,7 +23,6 @@ export default async function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<ScrollArea className="h-[100vh]">
 				<body
-					// className={`${geistSans.variable} ${geistMono.variable} antialiased p-3`}
 					className={` ${getAppFont(appFont).className} antialiased relative`}
 				>
 					<Providers>

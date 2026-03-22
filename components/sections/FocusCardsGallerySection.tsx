@@ -28,7 +28,7 @@ const _cards = [
 	},
 ];
 export function FocusCardsGallerySection({
-	cards = _cards,
+	cards,
 	...props
 }: {
 	cards: IFocusGalleryCards;

@@ -5972,9 +5972,6 @@ export interface Section {
               }[]
             | null;
         };
-        ParallaxGridGallery?: {
-          images?: string[] | null;
-        };
         AnimatedTabs?: {
           tabs?:
             | {
@@ -5996,7 +5993,12 @@ export interface Section {
             | null;
         };
         Marquee3DGallery?: {
-          imageUrls?: string[] | null;
+          images?:
+            | {
+                imageUrl?: string | null;
+                id?: string | null;
+              }[]
+            | null;
         };
         FocusCardsGallery?: {
           cards?:
@@ -6007,8 +6009,24 @@ export interface Section {
               }[]
             | null;
         };
-        CircularGallery?: {};
+        CircularGallery?: {
+          cards?:
+            | {
+                title: string;
+                imageUrl: string;
+                id?: string | null;
+              }[]
+            | null;
+        };
         SpotLightCards?: {};
+        ParallaxGridGallery?: {
+          images?:
+            | {
+                imageUrl: string;
+                id?: string | null;
+              }[]
+            | null;
+        };
         MarqueeStandard?: {
           orientation?: ('horizontal' | 'vertical') | null;
           cards?:
@@ -8028,11 +8046,6 @@ export interface SectionsSelect<T extends boolean = true> {
                     id?: T;
                   };
             };
-        ParallaxGridGallery?:
-          | T
-          | {
-              images?: T;
-            };
         AnimatedTabs?:
           | T
           | {
@@ -8060,7 +8073,12 @@ export interface SectionsSelect<T extends boolean = true> {
         Marquee3DGallery?:
           | T
           | {
-              imageUrls?: T;
+              images?:
+                | T
+                | {
+                    imageUrl?: T;
+                    id?: T;
+                  };
             };
         FocusCardsGallery?:
           | T
@@ -8073,8 +8091,28 @@ export interface SectionsSelect<T extends boolean = true> {
                     id?: T;
                   };
             };
-        CircularGallery?: T | {};
+        CircularGallery?:
+          | T
+          | {
+              cards?:
+                | T
+                | {
+                    title?: T;
+                    imageUrl?: T;
+                    id?: T;
+                  };
+            };
         SpotLightCards?: T | {};
+        ParallaxGridGallery?:
+          | T
+          | {
+              images?:
+                | T
+                | {
+                    imageUrl?: T;
+                    id?: T;
+                  };
+            };
         MarqueeStandard?:
           | T
           | {

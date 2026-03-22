@@ -31,9 +31,11 @@ const _images = [
 ];
 
 export function ParallaxScrollGallerySection({
-	images = _images,
+	images,
 }: {
-	images: string[];
+	images: IParallaxGridGalleryImages;
 }) {
-	return <ParallaxScroll images={images} />;
+	return (
+		<ParallaxScroll images={images!.map((img) => img.imageUrl as string)} />
+	);
 }

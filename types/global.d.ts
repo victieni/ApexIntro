@@ -18,4 +18,10 @@ declare global {
 	>["testimonials"];
 	type IAnimatedTabs = NonNullable<ISection["AnimatedTabs"]>["tabs"];
 	type IFocusGalleryCards = NonNullable<ISection["FocusCardsGallery"]>["cards"];
+	type IParallaxGridGalleryImages = NonNullable<
+		ISection["ParallaxGridGallery"]
+	>["images"];
+	type ICircularGalleryCards = NonNullable<
+		ISection["CircularGallery"]
+	>["cards"];
 }
