@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 
 import { useEffect, useState } from "react";
 import MyBtn from "../Btns/MyBtn";
+import Image from "next/image";
 
 type Testimonial = {
 	quote: string;
@@ -80,7 +81,7 @@ export const AnimatedTestimonials = ({
 									}}
 									className="absolute inset-0 origin-bottom"
 								>
-									<img
+									<Image
 										src={testimonial.imageUrl}
 										alt={testimonial.name}
 										width={500}

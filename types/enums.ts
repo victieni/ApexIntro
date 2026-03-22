@@ -26,9 +26,10 @@ export enum eSectionVariants {
 	CanvasRevealEffect = "Canvas_Reveal_Effect",
 	AnimatedTestimonials = "Animated_Testimonials",
 	SpotLightCards = "Spot_light_cards", // ! replace
+	MarqueeStandard = "Marquee_Standard",
 
 	// image galleries
-	FocusCardsImageGallery = "Focus_Cards_Image_Gallery",
+	FocusCardsGallery = "Focus_Cards_Gallery",
 	ParallaxGridGallery = "Parallax_Grid_Gallery",
 	AnimatedTabs = "Animated_Tabs",
 	Marquee3DGallery = "Marquee_3D_Gallery",

@@ -143,13 +143,51 @@ export const Sections: GlobalConfig = {
 								},
 							],
 						},
+					],
+				},
+				{
+					type: "tabs",
+					tabs: [
 						{
 							name: "Marquee3DGallery",
 							fields: [{ name: "imageUrls", type: "text", hasMany: true }],
 						},
-						{ name: "FocusCardsImageGallery", fields: [] },
+						{
+							name: "FocusCardsGallery",
+							fields: [
+								{
+									name: "cards",
+									type: "array",
+									fields: [
+										{ name: "title", type: "text", required: true },
+										{ name: "imageUrl", type: "text", required: true },
+									],
+								},
+							],
+						},
 						{ name: "CircularGallery", fields: [] },
 						{ name: "SpotLightCards", fields: [] },
+						{
+							name: "MarqueeStandard",
+							fields: [
+								{
+									name: "orientation",
+									type: "radio",
+									options: ["horizontal", "vertical"],
+									defaultValue: "horizontal",
+								},
+								{
+									name: "cards",
+									type: "array",
+									fields: [
+										{ name: "name", type: "text", required: true },
+										{ name: "username", type: "text", required: true },
+										{ name: "body", type: "text", required: true },
+										{ name: "imgUrl", type: "text", required: true },
+									],
+								},
+							],
+						},
 					],
 				},
 			],

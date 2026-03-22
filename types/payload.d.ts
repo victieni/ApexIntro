@@ -2198,7 +2198,8 @@ export interface Section {
           | 'Canvas_Reveal_Effect'
           | 'Animated_Testimonials'
           | 'Spot_light_cards'
-          | 'Focus_Cards_Image_Gallery'
+          | 'Marquee_Standard'
+          | 'Focus_Cards_Gallery'
           | 'Parallax_Grid_Gallery'
           | 'Animated_Tabs'
           | 'Marquee_3D_Gallery'
@@ -5997,9 +5998,29 @@ export interface Section {
         Marquee3DGallery?: {
           imageUrls?: string[] | null;
         };
-        FocusCardsImageGallery?: {};
+        FocusCardsGallery?: {
+          cards?:
+            | {
+                title: string;
+                imageUrl: string;
+                id?: string | null;
+              }[]
+            | null;
+        };
         CircularGallery?: {};
         SpotLightCards?: {};
+        MarqueeStandard?: {
+          orientation?: ('horizontal' | 'vertical') | null;
+          cards?:
+            | {
+                name: string;
+                username: string;
+                body: string;
+                imgUrl: string;
+                id?: string | null;
+              }[]
+            | null;
+        };
         id?: string | null;
       }[]
     | null;
@@ -7898,6 +7919,18 @@ export interface Credential {
         id?: string | null;
       }[]
     | null;
+  contacts: {
+    socialMedia?: {
+      twitter?: string | null;
+      facebook?: string | null;
+      instagram?: string | null;
+      youtube?: string | null;
+      tiktok?: string | null;
+      reddit?: string | null;
+    };
+    email: string;
+    phone?: string | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -8029,9 +8062,33 @@ export interface SectionsSelect<T extends boolean = true> {
           | {
               imageUrls?: T;
             };
-        FocusCardsImageGallery?: T | {};
+        FocusCardsGallery?:
+          | T
+          | {
+              cards?:
+                | T
+                | {
+                    title?: T;
+                    imageUrl?: T;
+                    id?: T;
+                  };
+            };
         CircularGallery?: T | {};
         SpotLightCards?: T | {};
+        MarqueeStandard?:
+          | T
+          | {
+              orientation?: T;
+              cards?:
+                | T
+                | {
+                    name?: T;
+                    username?: T;
+                    body?: T;
+                    imgUrl?: T;
+                    id?: T;
+                  };
+            };
         id?: T;
       };
   updatedAt?: T;
@@ -8065,6 +8122,22 @@ export interface CredentialsSelect<T extends boolean = true> {
         link?: T;
         icon?: T;
         id?: T;
+      };
+  contacts?:
+    | T
+    | {
+        socialMedia?:
+          | T
+          | {
+              twitter?: T;
+              facebook?: T;
+              instagram?: T;
+              youtube?: T;
+              tiktok?: T;
+              reddit?: T;
+            };
+        email?: T;
+        phone?: T;
       };
   updatedAt?: T;
   createdAt?: T;

@@ -56,5 +56,34 @@ export const Credentials: GlobalConfig = {
 				},
 			],
 		},
+		{
+			name: "contacts",
+			type: "group",
+			fields: [
+				{
+					name: "socialMedia",
+					type: "group",
+					fields: [
+						{ name: "twitter", type: "text" },
+						{ name: "facebook", type: "text" },
+						{ name: "instagram", type: "text" },
+						{ name: "youtube", type: "text" },
+						{ name: "tiktok", type: "text" },
+						{ name: "reddit", type: "text" },
+					],
+				},
+				{
+					name: "email",
+					type: "text",
+					required: true,
+					defaultValue: "codeMedic2@gmail.com",
+				},
+				{
+					name: "phone",
+					type: "text",
+					// required: true,
+				},
+			],
+		},
 	],
 };
