@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 import { useEffect, useState } from "react";
+import MyBtn from "../Btns/MyBtn";
 
 type Testimonial = {
 	quote: string;
@@ -13,7 +14,7 @@ type Testimonial = {
 };
 export const AnimatedTestimonials = ({
 	testimonials,
-	autoplay = false,
+	autoplay = true,
 }: {
 	testimonials: Testimonial[];
 	autoplay?: boolean;
@@ -145,18 +146,18 @@ export const AnimatedTestimonials = ({
 						</motion.p>
 					</motion.div>
 					<div className="flex gap-4 pt-12 md:pt-0">
-						<button
+						<MyBtn
 							onClick={handlePrev}
 							className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
 						>
 							<ArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
-						</button>
-						<button
+						</MyBtn>
+						<MyBtn
 							onClick={handleNext}
 							className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
 						>
 							<ArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
-						</button>
+						</MyBtn>
 					</div>
 				</div>
 			</div>

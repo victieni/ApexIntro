@@ -20,17 +20,20 @@ export enum eHeroHighlightVariants {
 }
 
 export enum eSectionVariants {
-	// Aceternity
+	// ? Aceternity
 	AppleCardsCarousel = "apple-cards-carousel",
-	FocusCardsImageGallery = "Focus_Cards_Image_Gallery",
 	BentoGrid = "Bento_Grid",
 	CanvasRevealEffect = "Canvas_Reveal_Effect",
 	AnimatedTestimonials = "Animated_Testimonials",
-	SpotLightCards = "Spot_light_cards",
+	SpotLightCards = "Spot_light_cards", // ! replace
 
+	// image galleries
+	FocusCardsImageGallery = "Focus_Cards_Image_Gallery",
 	ParallaxGridGallery = "Parallax_Grid_Gallery",
 	AnimatedTabs = "Animated_Tabs",
-	// React Beats
+	Marquee3DGallery = "Marquee_3D_Gallery",
+
+	// ? React Beats
 	MagicBento = "Magic_Bento",
 	CircularGallery = "Circular_Gallery",
 	SnapCursor = "Snap_Cursor",

@@ -33,6 +33,7 @@ export const Sections: GlobalConfig = {
 									type: "array",
 									fields: [
 										{ name: "title", type: "text", required: true },
+										{ name: "description", type: "text" },
 										{
 											name: "icon",
 											type: "select",
@@ -96,7 +97,6 @@ export const Sections: GlobalConfig = {
 									name: "testimonials",
 									type: "array",
 									fields: [
-										{ name: "quote", type: "text", required: true },
 										{ name: "name", type: "text", required: true },
 										{
 											name: "designation",
@@ -104,6 +104,7 @@ export const Sections: GlobalConfig = {
 											required: true,
 											defaultValue: "client",
 										},
+										{ name: "quote", type: "textarea", required: true },
 										{ name: "imageUrl", type: "text" },
 									],
 								},
@@ -127,7 +128,25 @@ export const Sections: GlobalConfig = {
 								},
 							],
 						},
-						{ name: "AppleCardsCarousel", fields: [] },
+						{
+							name: "AppleCardsCarousel",
+							fields: [
+								{
+									name: "cards",
+									type: "array",
+									fields: [
+										{ name: "category", type: "text" },
+										{ name: "title", type: "text" },
+										{ name: "imageUrl", type: "text" },
+										// {name: "content", type: "text"},
+									],
+								},
+							],
+						},
+						{
+							name: "Marquee3DGallery",
+							fields: [{ name: "imageUrls", type: "text", hasMany: true }],
+						},
 						{ name: "FocusCardsImageGallery", fields: [] },
 						{ name: "CircularGallery", fields: [] },
 						{ name: "SpotLightCards", fields: [] },

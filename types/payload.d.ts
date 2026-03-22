@@ -2194,13 +2194,14 @@ export interface Section {
         highlightText?: string | null;
         variant:
           | 'apple-cards-carousel'
-          | 'Focus_Cards_Image_Gallery'
           | 'Bento_Grid'
           | 'Canvas_Reveal_Effect'
           | 'Animated_Testimonials'
           | 'Spot_light_cards'
+          | 'Focus_Cards_Image_Gallery'
           | 'Parallax_Grid_Gallery'
           | 'Animated_Tabs'
+          | 'Marquee_3D_Gallery'
           | 'Magic_Bento'
           | 'Circular_Gallery'
           | 'Snap_Cursor';
@@ -2208,6 +2209,7 @@ export interface Section {
           canva?:
             | {
                 title: string;
+                description?: string | null;
                 icon?:
                   | (
                       | 'a-arrow-down'
@@ -5961,9 +5963,9 @@ export interface Section {
         AnimatedTestimonials?: {
           testimonials?:
             | {
-                quote: string;
                 name: string;
                 designation: string;
+                quote: string;
                 imageUrl?: string | null;
                 id?: string | null;
               }[]
@@ -5982,7 +5984,19 @@ export interface Section {
               }[]
             | null;
         };
-        AppleCardsCarousel?: {};
+        AppleCardsCarousel?: {
+          cards?:
+            | {
+                category?: string | null;
+                title?: string | null;
+                imageUrl?: string | null;
+                id?: string | null;
+              }[]
+            | null;
+        };
+        Marquee3DGallery?: {
+          imageUrls?: string[] | null;
+        };
         FocusCardsImageGallery?: {};
         CircularGallery?: {};
         SpotLightCards?: {};
@@ -7926,6 +7940,7 @@ export interface SectionsSelect<T extends boolean = true> {
                 | T
                 | {
                     title?: T;
+                    description?: T;
                     icon?: T;
                     id?: T;
                   };
@@ -7973,9 +7988,9 @@ export interface SectionsSelect<T extends boolean = true> {
               testimonials?:
                 | T
                 | {
-                    quote?: T;
                     name?: T;
                     designation?: T;
+                    quote?: T;
                     imageUrl?: T;
                     id?: T;
                   };
@@ -7997,7 +8012,23 @@ export interface SectionsSelect<T extends boolean = true> {
                     id?: T;
                   };
             };
-        AppleCardsCarousel?: T | {};
+        AppleCardsCarousel?:
+          | T
+          | {
+              cards?:
+                | T
+                | {
+                    category?: T;
+                    title?: T;
+                    imageUrl?: T;
+                    id?: T;
+                  };
+            };
+        Marquee3DGallery?:
+          | T
+          | {
+              imageUrls?: T;
+            };
         FocusCardsImageGallery?: T | {};
         CircularGallery?: T | {};
         SpotLightCards?: T | {};

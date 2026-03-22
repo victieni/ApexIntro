@@ -16,4 +16,5 @@ declare global {
 	type IAnimatedTestimonials = NonNullable<
 		ISection["AnimatedTestimonials"]
 	>["testimonials"];
+	type IAnimatedTabs = NonNullable<ISection["AnimatedTabs"]>["tabs"];
 }

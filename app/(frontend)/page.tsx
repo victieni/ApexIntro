@@ -1,10 +1,12 @@
 import Heading from "@/components/layout/Heading";
 import StyledCursor from "@/components/layout/StyledCursor";
+import { AnimatedTabsSection } from "@/components/sections/AnimatedTabsSection";
 import { AnimatedTestimonialSection } from "@/components/sections/AnimatedTestimonialsSection";
 import BentoGridSection from "@/components/sections/BentoGridSection";
 import CanvasRevealEffectSection from "@/components/sections/CanvasRevealEffectSection";
 import HeroSection from "@/components/sections/HeroSection";
 import MagicBentoGridSection from "@/components/sections/MagicBentoGridSection";
+import { ParallaxScrollGallerySection } from "@/components/sections/ParallaxScrollSection";
 import SnapCursorSection from "@/components/sections/SnapCursorSection";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { getSections } from "@/lib/actions/globals.actions";
@@ -39,7 +41,7 @@ const SectionContainer = ({
 			<div>
 				<Heading>{section.title}</Heading>
 			</div>
-			<div className="flex items-center gap-x-2 text-lg">
+			<div className="flex items-center gap-x-2 flex-wrap text-lg">
 				<span>{section.description}</span>
 				{section.highlightText && (
 					<PointerHighlight
@@ -71,6 +73,12 @@ const SectionContainer = ({
 					<AnimatedTestimonialSection
 						testimonials={section.AnimatedTestimonials?.testimonials}
 					/>
+				) : section.variant === eSectionVariants.ParallaxGridGallery ? (
+					<ParallaxScrollGallerySection
+						images={section.ParallaxGridGallery?.images!}
+					/>
+				) : section.variant === eSectionVariants.AnimatedTabs ? (
+					<AnimatedTabsSection tabs={section.AnimatedTabs?.tabs} />
 				) : (
 					"Coming soon..."
 				)}
