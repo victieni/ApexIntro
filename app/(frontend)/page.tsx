@@ -10,6 +10,7 @@ import { FocusCardsGallerySection } from "@/components/sections/FocusCardsGaller
 import HeroSection from "@/components/sections/HeroSection";
 import MagicBentoGridSection from "@/components/sections/MagicBentoGridSection";
 import { Marquee3DGallerySection } from "@/components/sections/Marquee3DGallerySection";
+import { MarqueeStandardSection } from "@/components/sections/MarqueeStandardSection";
 import { ParallaxScrollGallerySection } from "@/components/sections/ParallaxScrollSection";
 import SnapCursorSection from "@/components/sections/SnapCursorSection";
 import { getSections } from "@/lib/actions/globals.actions";
@@ -24,7 +25,7 @@ export default async function Home() {
 			{/* Test cursor variants */}
 			<HeroSection />
 
-			<div className="space-y-4 mt-4">
+			<div className="space-y-5 mt-4">
 				{sections!.map((s) => (
 					<SectionContainer key={s.id} section={s} />
 				))}
@@ -74,7 +75,7 @@ const SectionContainer = ({
 		case "SnapCursor":
 			return <SnapCursorSection section={section} className={className} />;
 		case "MarqueeStandard":
-			return <></>;
+			return <MarqueeStandardSection section={section} />;
 
 		default:
 			return <div>Coming soon.</div>;

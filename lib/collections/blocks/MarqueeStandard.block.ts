@@ -15,13 +15,20 @@ export const MarqueeStandard: Block = {
 			defaultValue: "horizontal",
 		},
 		{
-			name: "cards",
+			name: "rows",
 			type: "array",
 			fields: [
-				{ name: "name", type: "text", required: true },
-				{ name: "username", type: "text", required: true },
-				{ name: "body", type: "text", required: true },
-				{ name: "imgUrl", type: "text", required: true },
+				{ name: "reverse", type: "checkbox", defaultValue: false },
+				{
+					name: "cards",
+					type: "array",
+					fields: [
+						{ name: "name", type: "text", required: true },
+						{ name: "username", type: "text", required: true },
+						{ name: "body", type: "text", required: true },
+						{ name: "imgUrl", type: "text", required: true },
+					],
+				},
 			],
 		},
 	],

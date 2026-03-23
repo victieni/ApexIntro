@@ -38,4 +38,8 @@ declare global {
 		ISection,
 		{ blockType: "Marquee3DGallery" }
 	>;
+	type IMarqueeStandardSection = Extract<
+		ISection,
+		{ blockType: "MarqueeStandard" }
+	>;
 }

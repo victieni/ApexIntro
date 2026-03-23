@@ -85,7 +85,11 @@ const ReviewCard = ({
 	);
 };
 
-export function MarqueeStandardSection() {
+export function MarqueeStandardSection({
+	section,
+}: {
+	section: IMarqueeStandardSection;
+}) {
 	return (
 		<div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
 			<Marquee pauseOnHover className="[--duration:20s]">

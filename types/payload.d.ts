@@ -22774,12 +22774,18 @@ export interface Section {
             description?: string | null;
             highlightText?: string | null;
             orientation?: ('horizontal' | 'vertical') | null;
-            cards?:
+            rows?:
               | {
-                  name: string;
-                  username: string;
-                  body: string;
-                  imgUrl: string;
+                  reverse?: boolean | null;
+                  cards?:
+                    | {
+                        name: string;
+                        username: string;
+                        body: string;
+                        imgUrl: string;
+                        id?: string | null;
+                      }[]
+                    | null;
                   id?: string | null;
                 }[]
               | null;
@@ -28643,13 +28649,19 @@ export interface SectionsSelect<T extends boolean = true> {
               description?: T;
               highlightText?: T;
               orientation?: T;
-              cards?:
+              rows?:
                 | T
                 | {
-                    name?: T;
-                    username?: T;
-                    body?: T;
-                    imgUrl?: T;
+                    reverse?: T;
+                    cards?:
+                      | T
+                      | {
+                          name?: T;
+                          username?: T;
+                          body?: T;
+                          imgUrl?: T;
+                          id?: T;
+                        };
                     id?: T;
                   };
               id?: T;
