@@ -28441,6 +28441,7 @@ export interface Credential {
     email: string;
     phone?: string | null;
   };
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -28460,6 +28461,7 @@ export interface Design {
     | 'Keania_One'
     | 'audioWide';
   appFont: 'poppins' | 'Inter' | 'Montserrat' | 'Geist' | 'Roboto';
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -28735,6 +28737,7 @@ export interface CredentialsSelect<T extends boolean = true> {
         email?: T;
         phone?: T;
       };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -28747,6 +28750,7 @@ export interface DesignsSelect<T extends boolean = true> {
   cursorVariant?: T;
   headerFont?: T;
   appFont?: T;
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

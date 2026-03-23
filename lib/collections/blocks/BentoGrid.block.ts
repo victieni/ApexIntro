@@ -3,6 +3,11 @@ import { LUCIDE_ICON_NAMES } from "@/constants";
 
 export const BentoGrid: Block = {
 	slug: "BentoGrid",
+	admin: {
+		images: {
+			thumbnail: "https://assets.aceternity.com/cloudinary_bkp/bento-2.webp",
+		},
+	},
 	fields: [
 		{ name: "title", type: "text", required: true },
 		{ name: "icon", type: "select", options: LUCIDE_ICON_NAMES },

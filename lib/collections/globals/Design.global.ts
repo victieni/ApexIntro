@@ -8,6 +8,13 @@ import type { GlobalConfig } from "payload";
 
 export const Design: GlobalConfig = {
 	slug: "designs",
+	versions: {
+		drafts: {
+			autosave: {
+				interval: 100, // ? Best for optimal live preview.
+			},
+		},
+	},
 	fields: [
 		{
 			name: "cursorVariant",

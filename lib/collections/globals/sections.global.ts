@@ -1,5 +1,3 @@
-import { LUCIDE_ICON_NAMES } from "@/constants";
-import { eSectionVariants } from "@/types/enums";
 import type { GlobalConfig } from "payload";
 import {
 	AnimatedTabs,

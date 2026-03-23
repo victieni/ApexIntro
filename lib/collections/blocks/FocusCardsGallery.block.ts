@@ -3,6 +3,11 @@ import { LUCIDE_ICON_NAMES } from "@/constants";
 
 export const FocusCardsGallery: Block = {
 	slug: "FocusCardsGallery",
+	admin: {
+		images: {
+			thumbnail: "https://assets.aceternity.com/focus-cards.webp",
+		},
+	},
 	fields: [
 		{ name: "title", type: "text", required: true },
 		{ name: "icon", type: "select", options: LUCIDE_ICON_NAMES },

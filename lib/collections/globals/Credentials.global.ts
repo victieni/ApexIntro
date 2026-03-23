@@ -4,8 +4,16 @@ import type { GlobalConfig } from "payload";
 
 export const Credentials: GlobalConfig = {
 	slug: "credentials",
+	versions: {
+		drafts: {
+			autosave: {
+				interval: 100, // ? Best for optimal live preview.
+			},
+		},
+	},
 	fields: [
 		{ name: "appTitle", type: "text", required: true },
+
 		{
 			name: "hero",
 			type: "group",

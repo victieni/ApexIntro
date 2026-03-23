@@ -22,7 +22,7 @@ export default buildConfig({
 		},
 		livePreview: {
 			url: "http://localhost:3000",
-			globals: ["sections"],
+			globals: ["sections", "credentials", "designs"],
 		},
 	},
 	globals: [Sections, Credentials, Design],

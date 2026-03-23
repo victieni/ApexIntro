@@ -3,6 +3,11 @@ import { LUCIDE_ICON_NAMES } from "@/constants";
 
 export const AnimatedTestimonials: Block = {
 	slug: "AnimatedTestimonials",
+	admin: {
+		images: {
+			thumbnail: "https://assets.aceternity.com/animated-testimonials.webp",
+		},
+	},
 	fields: [
 		{ name: "title", type: "text", required: true },
 		{ name: "icon", type: "select", options: LUCIDE_ICON_NAMES },

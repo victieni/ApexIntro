@@ -16,7 +16,7 @@ declare global {
 	type IAnimatedTestimonials = NonNullable<
 		ISection["AnimatedTestimonials"]
 	>["testimonials"];
-	type IAnimatedTabs = NonNullable<ISection["AnimatedTabs"]>["tabs"];
+	type IAnimatedTabs = Extract<ISection[]>
 	type IFocusGalleryCards = NonNullable<ISection["FocusCardsGallery"]>["cards"];
 	type IParallaxGridGalleryImages = NonNullable<
 		ISection["ParallaxGridGallery"]
