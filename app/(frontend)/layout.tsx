@@ -25,7 +25,6 @@ export default async function RootLayout({
 				<body
 					className={` ${getAppFont(appFont).className} antialiased relative`}
 				>
-					<LivePreview />
 					<Providers>
 						<AppNavbar className="sticky top-5 z-30" />
 						<main className="p-3 overflow-x-hidden max-w-screen">

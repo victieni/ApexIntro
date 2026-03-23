@@ -1,3 +1,4 @@
+import { LivePreview } from "@/components/layout/LivePreview";
 import StyledCursor from "@/components/layout/StyledCursor";
 import { AnimatedTabsSection } from "@/components/sections/AnimatedTabsSection";
 import { AnimatedTestimonialSection } from "@/components/sections/AnimatedTestimonialsSection";
@@ -18,6 +19,8 @@ export default async function Home() {
 
 	return (
 		<StyledCursor>
+			<LivePreview />
+
 			{/* Test cursor variants */}
 			<HeroSection />
 

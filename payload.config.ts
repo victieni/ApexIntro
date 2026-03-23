@@ -20,7 +20,7 @@ export default buildConfig({
 		importMap: {
 			baseDir: path.resolve(dirname),
 		},
-		livePreview: {
+		livePreview: {	
 			url: "http://localhost:3000",
 			globals: ["sections", "credentials", "designs"],
 		},
@@ -29,6 +29,7 @@ export default buildConfig({
 	collections: [Users, Media],
 	editor: lexicalEditor(),
 	secret: process.env.PAYLOAD_SECRET || "",
+	serverURL: process.env.NEXT_PUBLIC_PAYLOAD_URL || "",
 	typescript: {
 		outputFile: path.resolve(dirname, "./types/payload.d.ts"),
 	},

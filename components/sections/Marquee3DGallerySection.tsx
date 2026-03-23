@@ -56,7 +56,9 @@ export function Marquee3DGallerySection({
 				highlightText={section.highlightText!}
 			/>
 
-			<ThreeDMarquee images={images} />
+			<ThreeDMarquee
+				images={section.images!.map((img) => img.imageUrl as string)}
+			/>
 		</div>
 	);
 }

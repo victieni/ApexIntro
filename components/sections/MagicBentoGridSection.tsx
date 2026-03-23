@@ -11,30 +11,28 @@ export default function MagicBentoGridSection({
 	section: IMagicBentoSection;
 } & ComponentProps<"div">) {
 	return (
-		<div
-			{...props}
-			className={cn("flex items-center justify-center", className)}
-		>
+		<div className={className}>
 			<SectionHeader
 				title={section.title}
 				description={section.description!}
 				highlightText={section.highlightText!}
 			/>
-
-			<MagicBento
-				textAutoHide={true}
-				enableStars
-				enableSpotlight
-				enableBorderGlow={true}
-				enableTilt={true}
-				enableMagnetism={true}
-				clickEffect
-				spotlightRadius={400}
-				particleCount={12}
-				glowColor="132, 0, 255"
-				disableAnimations={false}
-				cardData={section.items!}
-			/>
+			<div {...props} className={cn("flex items-center justify-center")}>
+				<MagicBento
+					textAutoHide={true}
+					enableStars
+					enableSpotlight
+					enableBorderGlow={true}
+					enableTilt={true}
+					enableMagnetism={true}
+					clickEffect
+					spotlightRadius={400}
+					particleCount={12}
+					glowColor="132, 0, 255"
+					disableAnimations={false}
+					cardData={section.items!}
+				/>
+			</div>
 		</div>
 	);
 }

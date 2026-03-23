@@ -31,16 +31,21 @@ export default function StyledCursor({ children }: { children?: ReactNode }) {
 		);
 	} else if (cursorVariant === eCursorVariants.TargetCursor) {
 		return (
-			<>
-				<SplashCursor />
+			<ClickSpark
+				sparkColor="#fff"
+				sparkSize={23}
+				sparkRadius={15}
+				sparkCount={8}
+				duration={400}
+			>
+				{children}
 				<TargetCursor
 					spinDuration={2}
 					hideDefaultCursor
 					parallaxOn
 					hoverDuration={0.2}
 				/>
-				{children}
-			</>
+			</ClickSpark>
 		);
 	}
 	return <></>;

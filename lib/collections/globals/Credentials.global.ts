@@ -13,7 +13,6 @@ export const Credentials: GlobalConfig = {
 	},
 	fields: [
 		{ name: "appTitle", type: "text", required: true },
-
 		{
 			name: "hero",
 			type: "group",
