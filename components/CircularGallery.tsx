@@ -42,7 +42,8 @@ function getFontSize(font: string): number {
 function createTextTexture(
 	gl: GL,
 	text: string,
-	font: string = "bold 30px monospace",
+	font: string = "bold 30px",
+	// font: string = "bold 30px monospace",
 	color: string = "black"
 ): { texture: Texture; width: number; height: number } {
 	const canvas = document.createElement("canvas");
@@ -94,7 +95,7 @@ class Title {
 		renderer,
 		text,
 		textColor = "#545050",
-		font = "30px sans-serif",
+		font = "30px",
 	}: TitleProps) {
 		autoBind(this);
 		this.gl = gl;

@@ -3,7 +3,6 @@ import { DynamicIcon } from "lucide-react/dynamic";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 
 export default function BentoGridSection({ items }: { items: IBentoItems }) {
-	console.log(getRandomNumber(1, items?.length));
 	return (
 		<div>
 			<BentoGrid className="max-w-4xl mx-auto">
