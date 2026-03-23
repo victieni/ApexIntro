@@ -2,24 +2,23 @@
 
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
-import TargetCursor from "../TargetCursor";
+import SectionHeader from "../layout/SectionHeader";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 
 export default function SnapCursorSection({
-	boxes,
+	section,
 	...props
-}: { boxes: ISnapBoxes } & ComponentProps<"div">) {
+}: { section: ISnapCursorSection } & ComponentProps<"div">) {
 	return (
 		<div {...props}>
-			<TargetCursor
-				spinDuration={2}
-				hideDefaultCursor
-				parallaxOn
-				hoverDuration={0.2}
+			<SectionHeader
+				title={section.title}
+				description={section.description!}
+				highlightText={section.highlightText!}
 			/>
 
 			<BentoGrid className="max-w-4xl mx-auto md:auto-rows-auto">
-				{boxes!.map((b, i) => (
+				{section.boxes!.map((b, i) => (
 					<BentoGridItem.Simple
 						key={b.id}
 						body={b.body}

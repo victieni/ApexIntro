@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { Tabs } from "../ui/animatedTabs";
+import { cn } from "@/lib/utils";
+import SectionHeader from "../layout/SectionHeader";
 
 const _tabs = [
 	{
@@ -55,10 +57,23 @@ const _tabs = [
 		),
 	},
 ];
-export function AnimatedTabsSection({ tabs }: { tabs: IAnimatedTabs }) {
+export function AnimatedTabsSection({
+	section,
+	className,
+}: {
+	section: IAnimatedTabsSection;
+	className?: string;
+}) {
 	return (
-		<div className="h-[20rem] md:h-[40rem] perspective-[1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
-			<Tabs tabs={tabs} />
+		<div className={cn("", className)}>
+			<SectionHeader
+				title={section.title}
+				description={section.description!}
+				highlightText={section.highlightText!}
+			/>
+			<div className="h-[20rem] md:h-[40rem] perspective-[1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
+				<Tabs tabs={section.tabs!} />
+			</div>
 		</div>
 	);
 }

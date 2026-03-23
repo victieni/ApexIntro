@@ -1,21 +1,26 @@
 import type { ComponentProps } from "react";
 import MagicBento from "../MagicBento";
 import { cn } from "@/lib/utils";
+import SectionHeader from "../layout/SectionHeader";
 
 export default function MagicBentoGridSection({
-	items,
+	section,
 	className,
 	...props
 }: {
-	items: IMagicBentoItems;
+	section: IMagicBentoSection;
 } & ComponentProps<"div">) {
-	if (!items) return;
-
 	return (
 		<div
 			{...props}
 			className={cn("flex items-center justify-center", className)}
 		>
+			<SectionHeader
+				title={section.title}
+				description={section.description!}
+				highlightText={section.highlightText!}
+			/>
+
 			<MagicBento
 				textAutoHide={true}
 				enableStars
@@ -28,7 +33,7 @@ export default function MagicBentoGridSection({
 				particleCount={12}
 				glowColor="132, 0, 255"
 				disableAnimations={false}
-				cardData={items}
+				cardData={section.items!}
 			/>
 		</div>
 	);

@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/a11y/noStaticElementInteractions: <explanation> */
 "use client";
 
 import { cn } from "@/lib/utils";
@@ -11,7 +12,7 @@ export const Card = React.memo(
 		hovered,
 		setHovered,
 	}: {
-		card: NonNullable<IFocusGalleryCards>[number];
+		card: NonNullable<IFocusGallerySection["cards"]>[number];
 		index: number;
 		hovered: number | null;
 		setHovered: React.Dispatch<React.SetStateAction<number | null>>;
@@ -47,17 +48,13 @@ export const Card = React.memo(
 
 Card.displayName = "Card";
 
-type Card = {
-	title: string;
-	src: string;
-};
 
-export function FocusCards({ cards }: { cards: Card[] }) {
+export function FocusCards({ cards }: { cards: IFocusGallerySection["cards"] }) {
 	const [hovered, setHovered] = useState<number | null>(null);
 
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full">
-			{cards.map((card, index) => (
+			{cards?.map((card, index) => (
 				<Card
 					key={card.title}
 					card={card}

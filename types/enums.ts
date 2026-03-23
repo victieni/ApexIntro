@@ -63,4 +63,5 @@ export enum eAppFonts {
 export enum eCursorVariants {
 	ClickSpark = "click_Cursor",
 	SplashCursor = "splash_Cursor",
+	TargetCursor = "target_Cursor",
 }

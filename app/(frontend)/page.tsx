@@ -1,22 +1,21 @@
-import Heading from "@/components/layout/Heading";
 import StyledCursor from "@/components/layout/StyledCursor";
 import { AnimatedTabsSection } from "@/components/sections/AnimatedTabsSection";
 import { AnimatedTestimonialSection } from "@/components/sections/AnimatedTestimonialsSection";
+import { AppleCarouselSection } from "@/components/sections/AppleCarouselSection";
 import BentoGridSection from "@/components/sections/BentoGridSection";
 import CanvasRevealEffectSection from "@/components/sections/CanvasRevealEffectSection";
 import CircularGallerySection from "@/components/sections/CircularGallerySection";
 import { FocusCardsGallerySection } from "@/components/sections/FocusCardsGallerySection";
 import HeroSection from "@/components/sections/HeroSection";
 import MagicBentoGridSection from "@/components/sections/MagicBentoGridSection";
+import { Marquee3DGallerySection } from "@/components/sections/Marquee3DGallerySection";
 import { ParallaxScrollGallerySection } from "@/components/sections/ParallaxScrollSection";
 import SnapCursorSection from "@/components/sections/SnapCursorSection";
-import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { getSections } from "@/lib/actions/globals.actions";
-import { cn } from "@/lib/utils";
-import { eSectionVariants } from "@/types/enums";
 
 export default async function Home() {
 	const { sections } = await getSections();
+
 	return (
 		<StyledCursor>
 			{/* Test cursor variants */}
@@ -38,57 +37,43 @@ const SectionContainer = ({
 	section: ISection;
 	className?: string;
 }) => {
-	return (
-		<div className={cn("minh[80vh] ", className)}>
-			<div>
-				<Heading>{section.title}</Heading>
-			</div>
-			<div className="flex items-center gap-x-2 flex-wrap text-lg">
-				<span>{section.description}</span>
-				{section.highlightText && (
-					<PointerHighlight
-						rectangleClassName="bg-primary/30 dark:bg-primary/20 border-primary leading-loose px-2! rounded-sm"
-						pointerClassName="text-yellow-500"
-					>
-						<span className="relative z-10 font-medium">
-							{section.highlightText}
-						</span>
-					</PointerHighlight>
-				)}
-			</div>
+	switch (section.blockType) {
+		case "CanvasRevealEffect":
+			return (
+				<CanvasRevealEffectSection section={section} className={className} />
+			);
+		case "AnimatedTestimonials":
+			return (
+				<AnimatedTestimonialSection section={section} className={className} />
+			);
+		case "animatedTabs":
+			return <AnimatedTabsSection section={section} className={className} />;
+		case "BentoGrid":
+			return <BentoGridSection section={section} className={className} />;
+		case "MagicBento":
+			return <MagicBentoGridSection section={section} className={className} />;
+		case "AppleCardsCarousel":
+			return <AppleCarouselSection section={section} className={className} />;
+		case "CircularGallery":
+			return <CircularGallerySection section={section} className={className} />;
+		case "Marquee3DGallery":
+			return (
+				<Marquee3DGallerySection section={section} className={className} />
+			);
+		case "FocusCardsGallery":
+			return (
+				<FocusCardsGallerySection section={section} className={className} />
+			);
+		case "ParallaxGridGallery":
+			return (
+				<ParallaxScrollGallerySection section={section} className={className} />
+			);
+		case "SnapCursor":
+			return <SnapCursorSection section={section} className={className} />;
+		case "MarqueeStandard":
+			return <></>;
 
-			<div className="mt-10">
-				{section.variant === eSectionVariants.CanvasRevealEffect ? (
-					<CanvasRevealEffectSection
-						canva={section.CanvasRevealEffect?.canva}
-					/>
-				) : section.variant === eSectionVariants.SnapCursor ? (
-					<SnapCursorSection
-						boxes={section.SnapCursor?.boxes}
-						className="mt-5"
-					/>
-				) : section.variant === eSectionVariants.BentoGrid ? (
-					<BentoGridSection items={section.BentoGrid?.items} />
-				) : section.variant === eSectionVariants.MagicBento ? (
-					<MagicBentoGridSection items={section.MagicBento?.items} />
-				) : section.variant === eSectionVariants.AnimatedTestimonials ? (
-					<AnimatedTestimonialSection
-						testimonials={section.AnimatedTestimonials?.testimonials}
-					/>
-				) : section.variant === eSectionVariants.ParallaxGridGallery ? (
-					<ParallaxScrollGallerySection
-						images={section.ParallaxGridGallery?.images}
-					/>
-				) : section.variant === eSectionVariants.AnimatedTabs ? (
-					<AnimatedTabsSection tabs={section.AnimatedTabs?.tabs} />
-				) : section.variant === eSectionVariants.FocusCardsGallery ? (
-					<FocusCardsGallerySection cards={section.FocusCardsGallery?.cards!} />
-				) : section.variant === eSectionVariants.CircularGallery ? (
-					<CircularGallerySection cards={section.CircularGallery?.cards} />
-				) : (
-					"Coming soon..."
-				)}
-			</div>
-		</div>
-	);
+		default:
+			return <div>Coming soon.</div>;
+	}
 };

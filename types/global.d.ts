@@ -9,19 +9,33 @@ declare global {
 	type IHeroBg = Design["heroBg"];
 
 	type ISection = NonNullable<Section["sections"]>[number];
-	type ICanva = NonNullable<ISection["CanvasRevealEffect"]>["canva"];
-	type ISnapBoxes = NonNullable<ISection["SnapCursor"]>["boxes"];
-	type IBentoItems = NonNullable<ISection["BentoGrid"]>["items"];
-	type IMagicBentoItems = NonNullable<ISection["MagicBento"]>["items"];
-	type IAnimatedTestimonials = NonNullable<
-		ISection["AnimatedTestimonials"]
-	>["testimonials"];
-	type IAnimatedTabs = Extract<ISection[]>
-	type IFocusGalleryCards = NonNullable<ISection["FocusCardsGallery"]>["cards"];
-	type IParallaxGridGalleryImages = NonNullable<
-		ISection["ParallaxGridGallery"]
-	>["images"];
-	type ICircularGalleryCards = NonNullable<
-		ISection["CircularGallery"]
-	>["cards"];
+	type ICanvasSection = Extract<ISection, { blockType: "CanvasRevealEffect" }>;
+	type ISnapCursorSection = Extract<ISection, { blockType: "SnapCursor" }>;
+	type IBentoGridSection = Extract<ISection, { blockType: "BentoGrid" }>;
+	type IMagicBentoSection = Extract<ISection, { blockType: "MagicBento" }>;
+	type IAnimatedTestimonialsSection = Extract<
+		ISection,
+		{ blockType: "AnimatedTestimonials" }
+	>;
+	type IAnimatedTabsSection = Extract<ISection, { blockType: "animatedTabs" }>;
+	type IAppleCarouselSection = Extract<
+		ISection,
+		{ blockType: "AppleCardsCarousel" }
+	>;
+	type IFocusGallerySection = Extract<
+		ISection,
+		{ blockType: "FocusCardsGallery" }
+	>;
+	type IParallaxGridGallerySection = Extract<
+		ISection,
+		{ blockType: "ParallaxGridGallery" }
+	>;
+	type ICircularGallerySection = Extract<
+		ISection,
+		{ blockType: "CircularGallery" }
+	>;
+	type IMarquee3DGallerySection = Extract<
+		ISection,
+		{ blockType: "Marquee3DGallery" }
+	>;
 }

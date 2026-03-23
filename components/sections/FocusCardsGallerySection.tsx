@@ -1,5 +1,6 @@
 import type { ComponentProps } from "react";
 import { FocusCards } from "@/components/ui/focus-cards";
+import SectionHeader from "../layout/SectionHeader";
 
 const _cards = [
 	{
@@ -28,14 +29,20 @@ const _cards = [
 	},
 ];
 export function FocusCardsGallerySection({
-	cards,
+	section,
 	...props
 }: {
-	cards: IFocusGalleryCards;
+	section: IFocusGallerySection;
 } & ComponentProps<"div">) {
 	return (
 		<div {...props}>
-			<FocusCards cards={cards} />
+			<SectionHeader
+				title={section.title}
+				description={section.description!}
+				highlightText={section.highlightText!}
+			/>
+			
+			<FocusCards cards={section.cards!} />
 		</div>
 	);
 }

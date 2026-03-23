@@ -1,5 +1,6 @@
+import type { ComponentProps } from "react";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
-import { ComponentProps } from "react";
+import SectionHeader from "../layout/SectionHeader";
 
 const _testimonials = [
 	{
@@ -40,12 +41,17 @@ const _testimonials = [
 ];
 
 export function AnimatedTestimonialSection({
-	testimonials = _testimonials,
+	section,
 	...props
-}: { testimonials: IAnimatedTestimonials } & ComponentProps<"div">) {
+}: { section: IAnimatedTestimonialsSection } & ComponentProps<"div">) {
 	return (
 		<div {...props}>
-			<AnimatedTestimonials testimonials={testimonials!} />
+			<SectionHeader
+				title={section.title}
+				description={section.description!}
+				highlightText={section.highlightText!}
+			/>
+			<AnimatedTestimonials testimonials={section.testimonials!} />
 		</div>
 	);
 }

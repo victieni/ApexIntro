@@ -5,6 +5,7 @@ import { useDesign } from "@/contexts/design.context";
 import { eCursorVariants } from "@/types/enums";
 import ClickSpark from "../ClickSpark";
 import SplashCursor from "../SplashCursor";
+import TargetCursor from "../TargetCursor";
 
 export default function StyledCursor({ children }: { children?: ReactNode }) {
 	const { cursorVariant } = useDesign();
@@ -25,6 +26,19 @@ export default function StyledCursor({ children }: { children?: ReactNode }) {
 		return (
 			<>
 				<SplashCursor />
+				{children}
+			</>
+		);
+	} else if (cursorVariant === eCursorVariants.TargetCursor) {
+		return (
+			<>
+				<SplashCursor />
+				<TargetCursor
+					spinDuration={2}
+					hideDefaultCursor
+					parallaxOn
+					hoverDuration={0.2}
+				/>
 				{children}
 			</>
 		);

@@ -28451,7 +28451,7 @@ export interface Credential {
  */
 export interface Design {
   id: string;
-  cursorVariant?: ('click_Cursor' | 'splash_Cursor') | null;
+  cursorVariant?: ('click_Cursor' | 'splash_Cursor' | 'target_Cursor') | null;
   headerFont:
     | 'Jim_Nightshade'
     | 'Petit_Formal_Script'

@@ -1,17 +1,30 @@
 "use client";
 
 import { Card, Carousel } from "@/components/ui/apple-cards-carousel";
+import { cn } from "@/lib/utils";
+import SectionHeader from "../layout/SectionHeader";
 
-export function AppleCarouselSection() {
+export function AppleCarouselSection({
+	section,
+	className,
+}: {
+	section: IAppleCarouselSection;
+	className?: string;
+}) {
 	const cards = data.map((card, index) => (
 		<Card key={card.src} card={card} index={index} />
 	));
 
 	return (
-		<div className="w-full h-full py-20">
-			<h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+		<div className={cn("w-full h-full py-20", className)}>
+			{/* <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
 				Get to know your iSad.
-			</h2>
+			</h2> */}
+			<SectionHeader
+				title={section.title}
+				description={section.description!}
+				highlightText={section.highlightText!}
+			/>
 			<Carousel items={cards} />
 		</div>
 	);
