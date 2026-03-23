@@ -5947,6 +5947,11 @@ export interface Section {
                   category?: string | null;
                   title?: string | null;
                   imageUrl?: string | null;
+                  content: {
+                    subTitle: string;
+                    body: string;
+                    imageUrl?: string | null;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -22776,13 +22781,13 @@ export interface Section {
             orientation?: ('horizontal' | 'vertical') | null;
             rows?:
               | {
-                  reverse?: boolean | null;
+                  reverse: boolean;
                   cards?:
                     | {
                         name: string;
                         username: string;
                         body: string;
-                        imgUrl: string;
+                        imageUrl: string;
                         id?: string | null;
                       }[]
                     | null;
@@ -28529,6 +28534,13 @@ export interface SectionsSelect<T extends boolean = true> {
                     category?: T;
                     title?: T;
                     imageUrl?: T;
+                    content?:
+                      | T
+                      | {
+                          subTitle?: T;
+                          body?: T;
+                          imageUrl?: T;
+                        };
                     id?: T;
                   };
               id?: T;
@@ -28659,7 +28671,7 @@ export interface SectionsSelect<T extends boolean = true> {
                           name?: T;
                           username?: T;
                           body?: T;
-                          imgUrl?: T;
+                          imageUrl?: T;
                           id?: T;
                         };
                     id?: T;

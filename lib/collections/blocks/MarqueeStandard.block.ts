@@ -18,7 +18,12 @@ export const MarqueeStandard: Block = {
 			name: "rows",
 			type: "array",
 			fields: [
-				{ name: "reverse", type: "checkbox", defaultValue: false },
+				{
+					name: "reverse",
+					type: "checkbox",
+					required: true,
+					defaultValue: false,
+				},
 				{
 					name: "cards",
 					type: "array",
@@ -26,7 +31,7 @@ export const MarqueeStandard: Block = {
 						{ name: "name", type: "text", required: true },
 						{ name: "username", type: "text", required: true },
 						{ name: "body", type: "text", required: true },
-						{ name: "imgUrl", type: "text", required: true },
+						{ name: "imageUrl", type: "text", required: true },
 					],
 				},
 			],

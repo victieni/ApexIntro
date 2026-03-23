@@ -9,6 +9,8 @@ import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import { GoogleGeminiEffect } from "../ui/google-gemini-effect";
 import { SparklesCore } from "../ui/sparkles";
 import { Vortex } from "../ui/vortex";
+import Heading from "../layout/Heading";
+import CustomHeroBg from "../layout/CustomHeroBg";
 
 export default function HeroSection({
 	className,
@@ -28,7 +30,7 @@ export default function HeroSection({
 			) : hero.heroBg === eHeroBg.GeminiEffect ? (
 				<GeminiEffectSection />
 			) : (
-				"Coming soon"
+				<CustomBg />
 			)}
 		</section>
 	);
@@ -174,3 +176,27 @@ export function VortexDemo() {
 		</div>
 	);
 }
+
+const CustomBg = () => {
+	const {
+		credentials: { appTitle, hero },
+	} = useCredentials();
+
+	return (
+		<div className="h-screen p-5 md:p-10 relative">
+			<CustomHeroBg heroBg={hero.heroBg} />
+
+			<div className="flex items-center justify-between">
+				<Heading>{appTitle}</Heading>
+				<div>
+					<p>{hero.mainText}</p>
+				</div>
+
+				<div>
+					<p>{hero.callToActionText}</p>
+					<CTABtn />
+				</div>
+			</div>
+		</div>
+	);
+};

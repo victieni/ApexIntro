@@ -21,7 +21,15 @@ export const AppleCardsCarousel: Block = {
 				{ name: "category", type: "text" },
 				{ name: "title", type: "text" },
 				{ name: "imageUrl", type: "text" },
-				// {name: "content", type: "text"},
+				{
+					name: "content",
+					type: "group",
+					fields: [
+						{ name: "subTitle", type: "text", required: true },
+						{ name: "body", type: "textarea", required: true },
+						{ name: "imageUrl", type: "text" },
+					],
+				},
 			],
 		},
 	],

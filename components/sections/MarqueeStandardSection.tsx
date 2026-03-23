@@ -45,12 +45,12 @@ const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({
-	img,
+	imageUrl,
 	name,
 	username,
 	body,
 }: {
-	img: string;
+	imageUrl: string;
 	name: string;
 	username: string;
 	body: string;
@@ -66,12 +66,12 @@ const ReviewCard = ({
 			)}
 		>
 			<div className="flex flex-row items-center gap-2">
-				<Image
-					src={img}
-					className="rounded-full"
+				<img
+					src={imageUrl}
+					alt="image-sample"
 					width="32"
 					height="32"
-					alt="image-sample"
+					className="rounded-full size-10 object-cover"
 				/>
 				<div className="flex flex-col">
 					<figcaption className="text-sm font-medium dark:text-white">
@@ -92,7 +92,8 @@ export function MarqueeStandardSection({
 }) {
 	return (
 		<div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-			<Marquee pauseOnHover className="[--duration:20s]">
+			{/*
+			 <Marquee pauseOnHover className="[--duration:20s]">
 				{firstRow.map((review) => (
 					<ReviewCard key={review.username} {...review} />
 				))}
@@ -101,7 +102,20 @@ export function MarqueeStandardSection({
 				{secondRow.map((review) => (
 					<ReviewCard key={review.username} {...review} />
 				))}
-			</Marquee>
+			</Marquee> */}
+
+			{section.rows?.map((r) => (
+				<Marquee
+					key={r.id}
+					pauseOnHover
+					reverse={r.reverse!}
+					className="[--duration:20s]"
+				>
+					{r.cards!.map((review) => (
+						<ReviewCard key={review.username} {...review} />
+					))}
+				</Marquee>
+			))}
 			<div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r"></div>
 			<div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l"></div>
 		</div>
