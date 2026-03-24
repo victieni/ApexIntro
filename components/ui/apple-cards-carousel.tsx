@@ -24,7 +24,7 @@ interface CarouselProps {
 }
 
 type Card = {
-	imageUrl: string;
+	thumbnailUrl: string;
 	title: string;
 	category: string;
 	content: React.ReactNode;
@@ -100,7 +100,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 				>
 					<div
 						className={cn(
-							"absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l"
+							"absolute right-0 z-1000 h-auto w-[5%] overflow-hidden bg-linear-to-l"
 						)}
 					></div>
 
@@ -232,6 +232,8 @@ export const Card = ({
 							>
 								{card.title}
 							</motion.p>
+
+							{/* Content */}
 							<div className="py-10">{card.content}</div>
 						</motion.div>
 					</div>
@@ -258,7 +260,7 @@ export const Card = ({
 					</motion.p>
 				</div>
 				<BlurImage
-					src={card.imageUrl}
+					src={card.thumbnailUrl}
 					alt={card.title}
 					fill
 					className="absolute inset-0 z-10 object-cover"

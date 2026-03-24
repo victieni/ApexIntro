@@ -5944,9 +5944,9 @@ export interface Section {
             highlightText?: string | null;
             cards?:
               | {
-                  category?: string | null;
-                  title?: string | null;
-                  imageUrl?: string | null;
+                  title: string;
+                  category: string;
+                  thumbnailUrl: string;
                   content: {
                     subTitle: string;
                     body: string;
@@ -28531,9 +28531,9 @@ export interface SectionsSelect<T extends boolean = true> {
               cards?:
                 | T
                 | {
-                    category?: T;
                     title?: T;
-                    imageUrl?: T;
+                    category?: T;
+                    thumbnailUrl?: T;
                     content?:
                       | T
                       | {

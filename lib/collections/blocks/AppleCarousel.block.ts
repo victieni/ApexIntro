@@ -18,9 +18,9 @@ export const AppleCardsCarousel: Block = {
 			name: "cards",
 			type: "array",
 			fields: [
-				{ name: "category", type: "text" },
-				{ name: "title", type: "text" },
-				{ name: "imageUrl", type: "text" },
+				{ name: "title", type: "text", required: true },
+				{ name: "category", type: "text", required: true },
+				{ name: "thumbnailUrl", type: "text", required: true },
 				{
 					name: "content",
 					type: "group",

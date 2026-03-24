@@ -21,18 +21,18 @@ export default async function RootLayout({
 
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<ScrollArea className="h-[100vh]">
-				<body
-					className={` ${getAppFont(appFont).className} antialiased relative`}
-				>
+			<body
+				className={` ${getAppFont(appFont).className} antialiased relative`}
+			>
+				<ScrollArea className="h-[100vh]">
 					<Providers>
 						<AppNavbar className="sticky top-5 z-30" />
 						<main className="p-3 overflow-x-hidden max-w-screen">
 							{children}
 						</main>
 					</Providers>
-				</body>
-			</ScrollArea>
+				</ScrollArea>
+			</body>
 		</html>
 	);
 }

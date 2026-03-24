@@ -29,6 +29,8 @@ export default function HeroSection({
 				<SparklesHeroSection />
 			) : hero.heroBg === eHeroBg.GeminiEffect ? (
 				<GeminiEffectSection />
+			) : hero.heroBg === eHeroBg.VortexBackground ? (
+				<VortexEffectBg />
 			) : (
 				<CustomBg />
 			)}
@@ -146,7 +148,7 @@ function GeminiEffectSection() {
 	);
 }
 
-export function VortexDemo() {
+function VortexEffectBg() {
 	const {
 		credentials: { appTitle, hero },
 	} = useCredentials();
@@ -154,8 +156,8 @@ export function VortexDemo() {
 	return (
 		<div className="w-[calc(100%-4rem)] mx-auto rounded-md  h-[30rem] overflow-hidden">
 			<Vortex
-				backgroundColor="black"
-				className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
+				backgroundColor="transparent"
+				className="flex items-center flex-col justify-center px-2  py-4 w-full h-full"
 			>
 				<h2 className="text-2xl md:text-6xl font-bold text-center">
 					{appTitle}
@@ -164,13 +166,11 @@ export function VortexDemo() {
 					{hero.mainText}
 				</p>
 
-				<div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
+				<div className="flex flex-col items-center gap-4 mt-6">
 					<p className=" text-base md:text-lg font-medium max-w-xl mt-6 text-center">
 						{hero.callToActionText}
 					</p>
 					<CTABtn className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]" />
-
-					{/* <button className="px-4 py-2  text-white ">Watch trailer</button> */}
 				</div>
 			</Vortex>
 		</div>
@@ -183,18 +183,23 @@ const CustomBg = () => {
 	} = useCredentials();
 
 	return (
-		<div className="h-screen p-5 md:p-10 relative">
+		<div className=" relative w-screen mx-auto rounded-md  h-[80vh] overflow-hidden">
 			<CustomHeroBg heroBg={hero.heroBg} />
+			<div className="absolute z-20 top-0 flex items-center flex-col justify-center px-2  py-4 w-full h-full">
+				<h2 className="">
+					<Heading className="textforeground text-4xl md:text-7xl lg:text-9xl font-bold text-center">
+						{appTitle}
+					</Heading>
+				</h2>
+				<p className=" text-base md:text-2xl font-semibold max-w-xl mt-6 text-center">
+					{hero.mainText}
+				</p>
 
-			<div className="flex items-center justify-between">
-				<Heading>{appTitle}</Heading>
-				<div>
-					<p>{hero.mainText}</p>
-				</div>
-
-				<div>
-					<p>{hero.callToActionText}</p>
-					<CTABtn />
+				<div className="flex flex-col items-center gap-4 mt-6">
+					<p className="text-base md:text-lg max-w-xl mt-6 text-center">
+						{hero.callToActionText}
+					</p>
+					<CTABtn className="bg-primary! hover:bg-primary/50! font-medium text-lg px-4 shadow-[0px_2px_0px_0px_#FFFFFF40_inset]" />
 				</div>
 			</div>
 		</div>
