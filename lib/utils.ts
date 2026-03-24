@@ -14,6 +14,7 @@ import {
 	sairaStencilOneFont,
 	wallPoetFont,
 } from "@/app/fonts";
+import { Media } from "@/types/payload";
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -59,5 +60,8 @@ export function getRandomNumber(min: number = 0.3, max: number = 1.0): number {
 	// Generate random number, round to 1 decimal, and ensure it's within range
 	// const randomValue = Math.random() * (max - min) + min;
 	// return Math.round(randomValue * 10) / 10;
-	return Math.round((Math.random() * (max - min) + min));
+	return Math.round(Math.random() * (max - min) + min);
 }
+
+const getImageUrl = ({ url, image }: { url?: string; image?: Media }) =>
+	url ?? image.url;

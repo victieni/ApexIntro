@@ -37,18 +37,7 @@ export const Credentials: GlobalConfig = {
 				},
 			],
 		},
-		{
-			name: "about",
-			type: "group",
-			fields: [
-				{
-					name: "MainText",
-					type: "textarea",
-					required: true,
-					defaultValue: "This is the About section of the ApexInto",
-				},
-			],
-		},
+		
 		{
 			name: "navItems",
 			type: "array",

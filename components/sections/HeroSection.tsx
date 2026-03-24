@@ -29,7 +29,7 @@ export default function HeroSection({
 				<SparklesHeroSection />
 			) : hero.heroBg === eHeroBg.GeminiEffect ? (
 				<GeminiEffectSection />
-			) : hero.heroBg === eHeroBg.VortexBackground ? (
+			) : hero.heroBg === eHeroBg.Vortex ? (
 				<VortexEffectBg />
 			) : (
 				<CustomBg />
@@ -154,7 +154,7 @@ function VortexEffectBg() {
 	} = useCredentials();
 
 	return (
-		<div className="w-[calc(100%-4rem)] mx-auto rounded-md  h-[30rem] overflow-hidden">
+		<div className="w-screen mx-auto rounded-md  h-[80vh] overflow-hidden">
 			<Vortex
 				backgroundColor="transparent"
 				className="flex items-center flex-col justify-center px-2  py-4 w-full h-full"

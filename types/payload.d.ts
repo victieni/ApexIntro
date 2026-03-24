@@ -19032,9 +19032,9 @@ export interface Section {
             highlightText?: string | null;
             items?:
               | {
-                  title?: string | null;
-                  description?: string | null;
-                  label?: string | null;
+                  title: string;
+                  description: string;
+                  label: string;
                   textAutoHide?: boolean | null;
                   disableAnimations?: boolean | null;
                   id?: string | null;
@@ -26571,12 +26571,9 @@ export interface Credential {
           | 'Hero_Highlight'
           | 'Sparkles'
           | 'Gemini_Effect'
-          | 'Vortex_Background'
+          | 'Vortex'
         )
       | null;
-  };
-  about: {
-    MainText: string;
   };
   navItems?:
     | {
@@ -28731,11 +28728,6 @@ export interface CredentialsSelect<T extends boolean = true> {
         callToActionText?: T;
         callToActionButtonText?: T;
         heroBg?: T;
-      };
-  about?:
-    | T
-    | {
-        MainText?: T;
       };
   navItems?:
     | T

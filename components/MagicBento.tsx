@@ -719,7 +719,7 @@ const MagicBento: React.FC<BentoProps> = ({
 			<BentoCardGrid gridRef={gridRef}>
 				<div className="mx-auto card-responsive grid gap-2">
 					{cardData.map((card, index) => {
-						const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+						const baseClassName = `cursor-target card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
 							enableBorderGlow ? "card--border-glow" : ""
 						}`;
 
@@ -730,7 +730,7 @@ const MagicBento: React.FC<BentoProps> = ({
 							"--glow-x": "50%",
 							"--glow-y": "50%",
 							"--glow-intensity": "0",
-							"--glow-radius": "200px",
+							"--glow-radius": "200px",	
 						} as React.CSSProperties;
 
 						if (enableStars) {

@@ -53,14 +53,17 @@ export const CanvasRevealEffect = ({
 // Add on
 CanvasRevealEffect.Card = ({
 	title,
+	description,
 	icon,
 	children,
 }: {
 	title: string;
+	description?:  string
 	icon: React.ReactNode;
 	children?: React.ReactNode;
 }) => {
 	const [hovered, setHovered] = React.useState(false);
+
 	return (
 		<div
 			onMouseEnter={() => setHovered(true)}
@@ -91,6 +94,7 @@ CanvasRevealEffect.Card = ({
 				<h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
 					{title}
 				</h2>
+				{/* {description && <p>{description}</p>} */}
 			</div>
 		</div>
 	);

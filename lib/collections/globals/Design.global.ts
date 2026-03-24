@@ -23,7 +23,7 @@ export const Design: GlobalConfig = {
 				label,
 				value,
 			})),
-			defaultValue: eCursorVariants.SplashCursor,
+			defaultValue: eCursorVariants.TargetCursor,
 		},
 		{
 			name: "headerFont",

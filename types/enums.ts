@@ -9,7 +9,7 @@ export enum eHeroBg {
 	HeroHighlight = "Hero_Highlight",
 	Sparkles = "Sparkles",
 	GeminiEffect = "Gemini_Effect",
-	VortexBackground = "Vortex_Background",
+	Vortex = "Vortex",
 }
 
 export enum eHeroHighlightVariants {
