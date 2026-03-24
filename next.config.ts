@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
 			},
 			{
 				protocol: "https",
+				hostname: "qz3p3fxrgr.ufs.sh",
+			},
+			{
+				protocol: "https",
 				hostname: "api.microlink.io",
 			},
 		],

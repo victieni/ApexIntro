@@ -1,6 +1,5 @@
 import type { Block } from "payload";
 import { LUCIDE_ICON_NAMES } from "@/constants";
-import { imageFields } from "../Media";
 
 export const MarqueeStandard: Block = {
 	slug: "MarqueeStandard",
@@ -34,9 +33,9 @@ export const MarqueeStandard: Block = {
 						{ name: "body", type: "text", required: true },
 						{
 							name: "image",
-							type: "group",
+							type: "upload",
+							relationTo: "media",
 							required: true,
-							fields: imageFields,
 						},
 					],
 				},

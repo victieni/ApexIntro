@@ -2199,10 +2199,7 @@ export interface Section {
               | {
                   tabName: string;
                   title: string;
-                  image: {
-                    url?: string | null;
-                    file?: (string | null) | Media;
-                  };
+                  image: string | Media;
                   id?: string | null;
                 }[]
               | null;
@@ -4077,10 +4074,7 @@ export interface Section {
                   name: string;
                   designation: string;
                   quote: string;
-                  image: {
-                    url?: string | null;
-                    file?: (string | null) | Media;
-                  };
+                  image: string | Media;
                   id?: string | null;
                 }[]
               | null;
@@ -5954,14 +5948,11 @@ export interface Section {
               | {
                   title: string;
                   category: string;
-                  thumbnailUrl: string;
+                  thumbnail: string | Media;
                   content: {
                     subTitle: string;
                     body: string;
-                    image: {
-                      url?: string | null;
-                      file?: (string | null) | Media;
-                    };
+                    image: string | Media;
                   };
                   id?: string | null;
                 }[]
@@ -11567,10 +11558,7 @@ export interface Section {
             cards?:
               | {
                   title: string;
-                  image: {
-                    url?: string | null;
-                    file?: (string | null) | Media;
-                  };
+                  image: string | Media;
                   id?: string | null;
                 }[]
               | null;
@@ -17174,10 +17162,7 @@ export interface Section {
             cards?:
               | {
                   title: string;
-                  image: {
-                    url?: string | null;
-                    file?: (string | null) | Media;
-                  };
+                  image: string | Media;
                   id?: string | null;
                 }[]
               | null;
@@ -20925,7 +20910,7 @@ export interface Section {
             highlightText?: string | null;
             images?:
               | {
-                  imageUrl?: string | null;
+                  image: string | Media;
                   id?: string | null;
                 }[]
               | null;
@@ -22804,7 +22789,7 @@ export interface Section {
                         name: string;
                         username: string;
                         body: string;
-                        imageUrl: string;
+                        image: string | Media;
                         id?: string | null;
                       }[]
                     | null;
@@ -24679,7 +24664,7 @@ export interface Section {
             highlightText?: string | null;
             images?:
               | {
-                  imageUrl: string;
+                  image: string | Media;
                   id?: string | null;
                 }[]
               | null;
@@ -28512,12 +28497,7 @@ export interface SectionsSelect<T extends boolean = true> {
                 | {
                     tabName?: T;
                     title?: T;
-                    image?:
-                      | T
-                      | {
-                          url?: T;
-                          file?: T;
-                        };
+                    image?: T;
                     id?: T;
                   };
               id?: T;
@@ -28536,12 +28516,7 @@ export interface SectionsSelect<T extends boolean = true> {
                     name?: T;
                     designation?: T;
                     quote?: T;
-                    image?:
-                      | T
-                      | {
-                          url?: T;
-                          file?: T;
-                        };
+                    image?: T;
                     id?: T;
                   };
               id?: T;
@@ -28559,18 +28534,13 @@ export interface SectionsSelect<T extends boolean = true> {
                 | {
                     title?: T;
                     category?: T;
-                    thumbnailUrl?: T;
+                    thumbnail?: T;
                     content?:
                       | T
                       | {
                           subTitle?: T;
                           body?: T;
-                          image?:
-                            | T
-                            | {
-                                url?: T;
-                                file?: T;
-                              };
+                          image?: T;
                         };
                     id?: T;
                   };
@@ -28607,12 +28577,7 @@ export interface SectionsSelect<T extends boolean = true> {
                 | T
                 | {
                     title?: T;
-                    image?:
-                      | T
-                      | {
-                          url?: T;
-                          file?: T;
-                        };
+                    image?: T;
                     id?: T;
                   };
               id?: T;
@@ -28647,12 +28612,7 @@ export interface SectionsSelect<T extends boolean = true> {
                 | T
                 | {
                     title?: T;
-                    image?:
-                      | T
-                      | {
-                          url?: T;
-                          file?: T;
-                        };
+                    image?: T;
                     id?: T;
                   };
               id?: T;
@@ -28688,7 +28648,7 @@ export interface SectionsSelect<T extends boolean = true> {
               images?:
                 | T
                 | {
-                    imageUrl?: T;
+                    image?: T;
                     id?: T;
                   };
               id?: T;
@@ -28712,7 +28672,7 @@ export interface SectionsSelect<T extends boolean = true> {
                           name?: T;
                           username?: T;
                           body?: T;
-                          imageUrl?: T;
+                          image?: T;
                           id?: T;
                         };
                     id?: T;
@@ -28730,7 +28690,7 @@ export interface SectionsSelect<T extends boolean = true> {
               images?:
                 | T
                 | {
-                    imageUrl?: T;
+                    image?: T;
                     id?: T;
                   };
               id?: T;

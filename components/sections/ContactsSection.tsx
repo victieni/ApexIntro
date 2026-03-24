@@ -15,9 +15,7 @@ import {
 export default async function ContactsSection() {
 	const { contacts } = await getCredentials();
 
-  switch (contacts.) {
-    case
-  }
+ 
 }
 
 ContactsSection.Main = ({contacts}: {contacts: IContacts}) => {

@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/a11y/noStaticElementInteractions: <explanation> */
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn, getImageUrl } from "@/lib/utils";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -26,7 +26,7 @@ export const Card = React.memo(
 			)}
 		>
 			<Image
-				src={card.imageUrl}
+				src={getImageUrl(card.image)!}
 				alt={card.title}
 				width={999}
 				height={999}

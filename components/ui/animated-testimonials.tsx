@@ -6,13 +6,11 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import MyBtn from "../Btns/MyBtn";
 import Image from "next/image";
+import { getImageUrl } from "@/lib/utils";
 
-type Testimonial = {
-	quote: string;
-	name: string;
-	designation: string;
-	imageUrl: string;
-};
+type Testimonial = NonNullable<
+	IAnimatedTestimonialsSection["testimonials"]
+>[number];
 export const AnimatedTestimonials = ({
 	testimonials,
 	autoplay = true,
@@ -52,7 +50,7 @@ export const AnimatedTestimonials = ({
 						<AnimatePresence>
 							{testimonials.map((testimonial, index) => (
 								<motion.div
-									key={testimonial.imageUrl}
+									key={testimonial.id}
 									initial={{
 										opacity: 0,
 										scale: 0.9,
@@ -82,7 +80,7 @@ export const AnimatedTestimonials = ({
 									className="absolute inset-0 origin-bottom"
 								>
 									<Image
-										src={testimonial.imageUrl}
+										src={getImageUrl(testimonial.image)!}
 										alt={testimonial.name}
 										width={500}
 										height={500}

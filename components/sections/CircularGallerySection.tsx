@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, getImageUrl } from "@/lib/utils";
 import CircularGallery from "../CircularGallery";
 import SectionHeader from "../layout/SectionHeader";
 
@@ -18,7 +18,7 @@ export default function CircularGallerySection({
 			/>
 			<CircularGallery
 				items={section.cards?.map((c) => ({
-					image: c.imageUrl,
+					image: getImageUrl(c.image)!,
 					text: c.title,
 				}))}
 				borderRadius={0.05}

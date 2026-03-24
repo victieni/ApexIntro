@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn, getImageUrl } from "@/lib/utils";
 import { ParallaxScroll } from "../ui/parallax-scroll";
 import SectionHeader from "../layout/SectionHeader";
 
@@ -48,7 +48,7 @@ export function ParallaxScrollGallerySection({
 			/>
 
 			<ParallaxScroll
-				images={section.images!.map((img) => img.imageUrl as string)}
+				images={section.images!.map((img) => getImageUrl(img.image)! as string)}
 			/>
 		</div>
 	);

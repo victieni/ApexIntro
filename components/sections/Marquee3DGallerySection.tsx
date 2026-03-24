@@ -1,7 +1,7 @@
 "use client";
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 import SectionHeader from "../layout/SectionHeader";
-import { cn } from "@/lib/utils";
+import { cn, getImageUrl } from "@/lib/utils";
 
 const images = [
 	"https://assets.aceternity.com/cloudinary_bkp/3d-card.png",
@@ -57,7 +57,7 @@ export function Marquee3DGallerySection({
 			/>
 
 			<ThreeDMarquee
-				images={section.images!.map((img) => img.imageUrl as string)}
+				images={section.images!.map((img) => getImageUrl(img.image)! as string)}
 			/>
 		</div>
 	);

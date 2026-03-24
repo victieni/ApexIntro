@@ -19,6 +19,5 @@ export const Media: CollectionConfig = {
 };
 
 export const imageFields: Field[] = [
-	{ name: "url", type: "text" },
-	{ name: "file", type: "upload", relationTo: "media" },
+	{ name: "image", type: "upload", relationTo: "media", required: true },
 ];

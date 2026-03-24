@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, Carousel } from "@/components/ui/apple-cards-carousel";
-import { cn } from "@/lib/utils";
+import { cn, getImageUrl } from "@/lib/utils";
 import SectionHeader from "../layout/SectionHeader";
 import Image from "next/image";
 
@@ -21,11 +21,11 @@ export function AppleCarouselSection({
 			card={{
 				title: c.title!,
 				category: c.category!,
-				thumbnailUrl: c.thumbnailUrl!,
+				thumbnailUrl: getImageUrl(c.thumbnail)!,
 				content: (
 					<Content
 						body={c.content.body}
-						imageUrl={c.content.imageUrl!}
+						imageUrl={getImageUrl(c.content.image)!}
 						subTitle={c.content.subTitle}
 					/>
 				),

@@ -1,6 +1,5 @@
-import type { Block } from "payload";
 import { LUCIDE_ICON_NAMES } from "@/constants";
-import { imageFields } from "../Media";
+import type { Block } from "payload";
 
 export const AnimatedTabs: Block = {
 	slug: "animatedTabs",
@@ -20,7 +19,7 @@ export const AnimatedTabs: Block = {
 			fields: [
 				{ name: "tabName", type: "text", required: true },
 				{ name: "title", type: "text", required: true },
-				{ name: "image", type: "group", required: true, fields: imageFields },
+				{ name: "image", type: "upload", relationTo: "media", required: true },
 			],
 		},
 	],

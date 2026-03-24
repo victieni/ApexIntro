@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Tabs } from "../ui/animatedTabs";
-import { cn } from "@/lib/utils";
+import { cn, getImageUrl } from "@/lib/utils";
 import SectionHeader from "../layout/SectionHeader";
 
 export function AnimatedTabsSection({
@@ -28,7 +28,7 @@ export function AnimatedTabsSection({
 							<div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
 								<p>{t.title}</p>
 								<Image
-									src={t.imageUrl}
+									src={getImageUrl(t.image)!}
 									alt="dummy image"
 									width="1000"
 									height="1000"

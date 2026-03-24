@@ -63,5 +63,11 @@ export function getRandomNumber(min: number = 0.3, max: number = 1.0): number {
 	return Math.round(Math.random() * (max - min) + min);
 }
 
-const getImageUrl = ({ url, file }: { url?: string; file?: Media }) =>
-	url ?? file?.url;
+export const getImageUrl = (image: Media | string) => {
+	if (typeof image === "string") {
+		return image;
+	} else if (typeof image === "object") {
+		return `${process.env.NEXT_PUBLIC_UPLOADTHING_FILE_DOMAIN}/f/${image._key}`;
+		// return `https://qz3p3fxrgr.ufs.sh/f/${image._key}`;
+	}
+};

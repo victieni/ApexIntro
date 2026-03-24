@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, getImageUrl } from "@/lib/utils";
 import Image from "next/image";
 import { Marquee } from "../ui/marquee";
 
@@ -92,17 +92,7 @@ export function MarqueeStandardSection({
 }) {
 	return (
 		<div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-			{/*
-			 <Marquee pauseOnHover className="[--duration:20s]">
-				{firstRow.map((review) => (
-					<ReviewCard key={review.username} {...review} />
-				))}
-			</Marquee>
-			<Marquee reverse pauseOnHover className="[--duration:20s]">
-				{secondRow.map((review) => (
-					<ReviewCard key={review.username} {...review} />
-				))}
-			</Marquee> */}
+			
 
 			{section.rows?.map((r) => (
 				<Marquee
@@ -112,7 +102,7 @@ export function MarqueeStandardSection({
 					className="[--duration:20s]"
 				>
 					{r.cards!.map((review) => (
-						<ReviewCard key={review.username} {...review} />
+						<ReviewCard key={review.username} imageUrl={getImageUrl(review.image)!} {...review} />
 					))}
 				</Marquee>
 			))}
