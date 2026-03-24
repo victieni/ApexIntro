@@ -37,7 +37,7 @@ export const Credentials: GlobalConfig = {
 				},
 			],
 		},
-		
+
 		{
 			name: "navItems",
 			type: "array",
@@ -57,18 +57,6 @@ export const Credentials: GlobalConfig = {
 			type: "group",
 			fields: [
 				{
-					name: "socialMedia",
-					type: "group",
-					fields: [
-						{ name: "twitter", type: "text" },
-						{ name: "facebook", type: "text" },
-						{ name: "instagram", type: "text" },
-						{ name: "youtube", type: "text" },
-						{ name: "tiktok", type: "text" },
-						{ name: "reddit", type: "text" },
-					],
-				},
-				{
 					name: "email",
 					type: "text",
 					required: true,
@@ -78,6 +66,35 @@ export const Credentials: GlobalConfig = {
 					name: "phone",
 					type: "text",
 					// required: true,
+				},
+				{
+					name: "CTA_Object",
+					type: "select",
+					options: ["Globse3D", "World_map", "GitHub_Globe"],
+					defaultValue: "World-map",
+				},
+				{
+					name: "socialMedia",
+					type: "array",
+					minRows: 1,
+					fields: [
+						{
+							name: "site",
+							type: "select",
+							options: [
+								"twitter",
+								"facebook",
+								"instagram",
+								"youtube",
+								"tiktok",
+								"reddit",
+							],
+							required: true,
+						},
+						{ name: "link", type: "text", required: true },
+						{ name: "displayText", type: "text", required: true },
+						{ name: "previewUrl", type: "text" },
+					],
 				},
 			],
 		},

@@ -14,7 +14,9 @@ export const Marquee3DGallery: Block = {
 		{
 			name: "images",
 			type: "array",
-			fields: [{ name: "imageUrl", type: "text" }],
+			fields: [
+				{ name: "image", type: "group", required: true, fields: imageFields },
+			],
 		},
 	],
 };

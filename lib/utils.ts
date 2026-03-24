@@ -63,5 +63,5 @@ export function getRandomNumber(min: number = 0.3, max: number = 1.0): number {
 	return Math.round(Math.random() * (max - min) + min);
 }
 
-const getImageUrl = ({ url, image }: { url?: string; image?: Media }) =>
-	url ?? image.url;
+const getImageUrl = ({ url, file }: { url?: string; file?: Media }) =>
+	url ?? file?.url;

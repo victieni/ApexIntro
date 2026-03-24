@@ -10,6 +10,7 @@ import { Media } from "./lib/collections/Media";
 import { Users } from "./lib/collections/Users";
 import { Credentials } from "./lib/collections/globals/Credentials.global";
 import { Design } from "./lib/collections/globals/Design.global";
+import { uploadthingStorage } from "@payloadcms/storage-uploadthing";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -20,9 +21,29 @@ export default buildConfig({
 		importMap: {
 			baseDir: path.resolve(dirname),
 		},
-		livePreview: {	
+		livePreview: {
 			url: "http://localhost:3000",
 			globals: ["sections", "credentials", "designs"],
+			breakpoints: [
+				{
+					label: "Mobile",
+					name: "mobile",
+					width: 375,
+					height: 667,
+				},
+				{
+					label: "Tablet",
+					name: "tablet",
+					width: 768,
+					height: 1024,
+				},
+				{
+					label: "Desktop",
+					name: "desktop",
+					width: 1440,
+					height: 900,
+				},
+			],
 		},
 	},
 	globals: [Sections, Credentials, Design],
@@ -37,5 +58,15 @@ export default buildConfig({
 		url: process.env.DATABASE_URL || "",
 	}),
 	sharp,
-	plugins: [],
+	plugins: [
+		uploadthingStorage({
+			collections: {
+				media: true,
+			},
+			options: {
+				token: process.env.UPLOADTHING_TOKEN,
+				acl: "public-read",
+			},
+		}),
+	],
 });

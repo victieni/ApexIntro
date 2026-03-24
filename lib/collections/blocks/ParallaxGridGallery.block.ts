@@ -1,5 +1,6 @@
 import type { Block } from "payload";
 import { LUCIDE_ICON_NAMES } from "@/constants";
+import { imageFields } from "../Media";
 
 export const ParallaxGridGallery: Block = {
 	slug: "ParallaxGridGallery",
@@ -17,7 +18,9 @@ export const ParallaxGridGallery: Block = {
 		{
 			name: "images",
 			type: "array",
-			fields: [{ name: "imageUrl", type: "text", required: true }],
+			fields: [
+				{ name: "image", type: "group", required: true, fields: imageFields },
+			],
 		},
 	],
 };

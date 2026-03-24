@@ -6,6 +6,7 @@ import { AppleCarouselSection } from "@/components/sections/AppleCarouselSection
 import BentoGridSection from "@/components/sections/BentoGridSection";
 import CanvasRevealEffectSection from "@/components/sections/CanvasRevealEffectSection";
 import CircularGallerySection from "@/components/sections/CircularGallerySection";
+import ContactsSection from "@/components/sections/ContactsSection";
 import { FocusCardsGallerySection } from "@/components/sections/FocusCardsGallerySection";
 import HeroSection from "@/components/sections/HeroSection";
 import MagicBentoGridSection from "@/components/sections/MagicBentoGridSection";
@@ -22,7 +23,6 @@ export default async function Home() {
 		<StyledCursor>
 			<LivePreview />
 
-			{/* Test cursor variants */}
 			<HeroSection />
 
 			<div className="space-y-5 mt-4">
@@ -30,6 +30,8 @@ export default async function Home() {
 					<SectionContainer key={s.id} section={s} />
 				))}
 			</div>
+
+			<ContactsSection />
 		</StyledCursor>
 	);
 }

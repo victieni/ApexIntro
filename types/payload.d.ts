@@ -157,6 +157,7 @@ export interface User {
 export interface Media {
   id: string;
   alt: string;
+  _key?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -271,6 +272,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  _key?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -2197,7 +2199,10 @@ export interface Section {
               | {
                   tabName: string;
                   title: string;
-                  imageUrl: string;
+                  image: {
+                    url?: string | null;
+                    file?: (string | null) | Media;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -4072,7 +4077,10 @@ export interface Section {
                   name: string;
                   designation: string;
                   quote: string;
-                  imageUrl?: string | null;
+                  image: {
+                    url?: string | null;
+                    file?: (string | null) | Media;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -5950,7 +5958,10 @@ export interface Section {
                   content: {
                     subTitle: string;
                     body: string;
-                    imageUrl?: string | null;
+                    image: {
+                      url?: string | null;
+                      file?: (string | null) | Media;
+                    };
                   };
                   id?: string | null;
                 }[]
@@ -11556,7 +11567,10 @@ export interface Section {
             cards?:
               | {
                   title: string;
-                  imageUrl: string;
+                  image: {
+                    url?: string | null;
+                    file?: (string | null) | Media;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -17160,7 +17174,10 @@ export interface Section {
             cards?:
               | {
                   title: string;
-                  imageUrl: string;
+                  image: {
+                    url?: string | null;
+                    file?: (string | null) | Media;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -28438,16 +28455,18 @@ export interface Credential {
       }[]
     | null;
   contacts: {
-    socialMedia?: {
-      twitter?: string | null;
-      facebook?: string | null;
-      instagram?: string | null;
-      youtube?: string | null;
-      tiktok?: string | null;
-      reddit?: string | null;
-    };
     email: string;
     phone?: string | null;
+    CTA_Object?: ('Globse3D' | 'World_map' | 'GitHub_Globe') | null;
+    socialMedia?:
+      | {
+          site: 'twitter' | 'facebook' | 'instagram' | 'youtube' | 'tiktok' | 'reddit';
+          link: string;
+          displayText: string;
+          previewUrl?: string | null;
+          id?: string | null;
+        }[]
+      | null;
   };
   _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
@@ -28493,7 +28512,12 @@ export interface SectionsSelect<T extends boolean = true> {
                 | {
                     tabName?: T;
                     title?: T;
-                    imageUrl?: T;
+                    image?:
+                      | T
+                      | {
+                          url?: T;
+                          file?: T;
+                        };
                     id?: T;
                   };
               id?: T;
@@ -28512,7 +28536,12 @@ export interface SectionsSelect<T extends boolean = true> {
                     name?: T;
                     designation?: T;
                     quote?: T;
-                    imageUrl?: T;
+                    image?:
+                      | T
+                      | {
+                          url?: T;
+                          file?: T;
+                        };
                     id?: T;
                   };
               id?: T;
@@ -28536,7 +28565,12 @@ export interface SectionsSelect<T extends boolean = true> {
                       | {
                           subTitle?: T;
                           body?: T;
-                          imageUrl?: T;
+                          image?:
+                            | T
+                            | {
+                                url?: T;
+                                file?: T;
+                              };
                         };
                     id?: T;
                   };
@@ -28573,7 +28607,12 @@ export interface SectionsSelect<T extends boolean = true> {
                 | T
                 | {
                     title?: T;
-                    imageUrl?: T;
+                    image?:
+                      | T
+                      | {
+                          url?: T;
+                          file?: T;
+                        };
                     id?: T;
                   };
               id?: T;
@@ -28608,7 +28647,12 @@ export interface SectionsSelect<T extends boolean = true> {
                 | T
                 | {
                     title?: T;
-                    imageUrl?: T;
+                    image?:
+                      | T
+                      | {
+                          url?: T;
+                          file?: T;
+                        };
                     id?: T;
                   };
               id?: T;
@@ -28740,18 +28784,18 @@ export interface CredentialsSelect<T extends boolean = true> {
   contacts?:
     | T
     | {
+        email?: T;
+        phone?: T;
+        CTA_Object?: T;
         socialMedia?:
           | T
           | {
-              twitter?: T;
-              facebook?: T;
-              instagram?: T;
-              youtube?: T;
-              tiktok?: T;
-              reddit?: T;
+              site?: T;
+              link?: T;
+              displayText?: T;
+              previewUrl?: T;
+              id?: T;
             };
-        email?: T;
-        phone?: T;
       };
   _status?: T;
   updatedAt?: T;

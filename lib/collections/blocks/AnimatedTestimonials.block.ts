@@ -1,5 +1,6 @@
 import type { Block } from "payload";
 import { LUCIDE_ICON_NAMES } from "@/constants";
+import { imageFields } from "../Media";
 
 export const AnimatedTestimonials: Block = {
 	slug: "AnimatedTestimonials",
@@ -25,7 +26,7 @@ export const AnimatedTestimonials: Block = {
 					defaultValue: "client",
 				},
 				{ name: "quote", type: "textarea", required: true },
-				{ name: "imageUrl", type: "text" },
+				{ name: "image", type: "group", required: true, fields: imageFields },
 			],
 		},
 	],

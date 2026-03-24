@@ -1,5 +1,6 @@
 import type { Block } from "payload";
 import { LUCIDE_ICON_NAMES } from "@/constants";
+import { imageFields } from "../Media";
 
 export const FocusCardsGallery: Block = {
 	slug: "FocusCardsGallery",
@@ -18,7 +19,7 @@ export const FocusCardsGallery: Block = {
 			type: "array",
 			fields: [
 				{ name: "title", type: "text", required: true },
-				{ name: "imageUrl", type: "text", required: true },
+				{ name: "image", type: "group", required: true, fields: imageFields },
 			],
 		},
 	],

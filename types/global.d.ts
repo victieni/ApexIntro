@@ -7,6 +7,7 @@ declare global {
 	type INavItems = Credential["navItems"];
 	type IDesign = Design;
 	type IHeroBg = Design["heroBg"];
+	type IContacts = Credential["contacts"]
 
 	type ISection = NonNullable<Section["sections"]>[number];
 	type ICanvasSection = Extract<ISection, { blockType: "CanvasRevealEffect" }>;

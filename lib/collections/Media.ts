@@ -4,6 +4,9 @@ export const Media: CollectionConfig = {
 	slug: "media",
 	access: {
 		read: () => true,
+		create: () => true,
+		update: () => true,
+		delete: () => true,
 	},
 	fields: [
 		{
@@ -15,6 +18,7 @@ export const Media: CollectionConfig = {
 	upload: true,
 };
 
-export const image:Field[] = [
-  
-]
+export const imageFields: Field[] = [
+	{ name: "url", type: "text" },
+	{ name: "file", type: "upload", relationTo: "media" },
+];

@@ -1,5 +1,6 @@
 import type { Block } from "payload";
 import { LUCIDE_ICON_NAMES } from "@/constants";
+import { imageFields } from "../Media";
 
 export const AppleCardsCarousel: Block = {
 	slug: "AppleCardsCarousel",
@@ -27,7 +28,12 @@ export const AppleCardsCarousel: Block = {
 					fields: [
 						{ name: "subTitle", type: "text", required: true },
 						{ name: "body", type: "textarea", required: true },
-						{ name: "imageUrl", type: "text" },
+						{
+							name: "image",
+							type: "group",
+							required: true,
+							fields: imageFields,
+						},
 					],
 				},
 			],
