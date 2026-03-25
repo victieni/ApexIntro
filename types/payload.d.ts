@@ -26561,6 +26561,7 @@ export interface Credential {
     mainText: string;
     highlightText: string;
     callToActionText: string;
+    callToActionMessage?: string | null;
     callToActionButtonText: string;
     heroBg?:
       | (
@@ -28730,6 +28731,7 @@ export interface CredentialsSelect<T extends boolean = true> {
         mainText?: T;
         highlightText?: T;
         callToActionText?: T;
+        callToActionMessage?: T;
         callToActionButtonText?: T;
         heroBg?: T;
       };

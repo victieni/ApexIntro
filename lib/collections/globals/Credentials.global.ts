@@ -20,6 +20,7 @@ export const Credentials: GlobalConfig = {
 				{ name: "mainText", type: "textarea", required: true },
 				{ name: "highlightText", type: "textarea", required: true },
 				{ name: "callToActionText", type: "text", required: true },
+				{ name: "callToActionMessage", type: "text", defaultValue: "Welcome to the future." },
 				{
 					name: "callToActionButtonText",
 					type: "text",
