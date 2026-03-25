@@ -58,7 +58,7 @@ CanvasRevealEffect.Card = ({
 	children,
 }: {
 	title: string;
-	description?:  string
+	description?: string;
 	icon: React.ReactNode;
 	children?: React.ReactNode;
 }) => {
@@ -244,17 +244,19 @@ const ShaderMaterial = ({
 	uniforms: Uniforms;
 }) => {
 	const { size } = useThree();
-	const ref = useRef<THREE.Mesh>();
+	const ref = useRef<THREE.Mesh>(null);
 	let lastFrameTime = 0;
 
 	// ! use "timer" instead of "clock"
-	useFrame(({ clock }) => {
+	// useFrame(({ clock }) => {
+	useFrame(({ time }) => {
 		if (!ref.current) return;
-		const timestamp = clock.getElapsedTime();
+		// const timestamp = clock.getElapsedTime();
+		const timestamp = time;
 		if (timestamp - lastFrameTime < 1 / maxFps) {
 			return;
 		}
-		lastFrameTime = timestamp;	
+		lastFrameTime = timestamp;
 
 		const material: any = ref.current.material;
 		const timeLocation = material.uniforms.u_time;
