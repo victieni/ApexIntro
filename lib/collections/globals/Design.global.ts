@@ -1,3 +1,4 @@
+import { updateDesigns } from "@/lib/actions/mutation.actions";
 import {
 	eAppFonts,
 	eCursorVariants,
@@ -46,4 +47,7 @@ export const Design: GlobalConfig = {
 			required: true,
 		},
 	],
+	hooks: {
+		afterChange: [updateDesigns],
+	},
 };

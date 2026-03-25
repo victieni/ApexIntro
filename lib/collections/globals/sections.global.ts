@@ -13,6 +13,7 @@ import {
 	ParallaxGridGallery,
 	SnapCursor,
 } from "../blocks";
+import { updateSections } from "@/lib/actions/mutation.actions";
 
 export const Sections: GlobalConfig = {
 	slug: "sections",
@@ -43,4 +44,7 @@ export const Sections: GlobalConfig = {
 			],
 		},
 	],
+	hooks: {
+		afterChange: [updateSections],
+	},
 };

@@ -1,4 +1,5 @@
 import { LUCIDE_ICON_NAMES } from "@/constants";
+import { updateGlobals } from "@/lib/actions/mutation.actions";
 import { eHeroBg } from "@/types/enums";
 import type { GlobalConfig } from "payload";
 
@@ -20,7 +21,11 @@ export const Credentials: GlobalConfig = {
 				{ name: "mainText", type: "textarea", required: true },
 				{ name: "highlightText", type: "textarea", required: true },
 				{ name: "callToActionText", type: "text", required: true },
-				{ name: "callToActionMessage", type: "text", defaultValue: "Welcome to the future." },
+				{
+					name: "callToActionMessage",
+					type: "text",
+					defaultValue: "Welcome to the future.",
+				},
 				{
 					name: "callToActionButtonText",
 					type: "text",
@@ -102,4 +107,8 @@ export const Credentials: GlobalConfig = {
 			],
 		},
 	],
+
+	hooks: {
+		afterChange: [updateGlobals],
+	},
 };
