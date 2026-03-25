@@ -3,6 +3,11 @@ import { LUCIDE_ICON_NAMES } from "@/constants";
 
 export const SnapCursor: Block = {
 	slug: "SnapCursor",
+	admin: {
+		images: {
+			thumbnail: "/assets/snapCursor.png",
+		},
+	},
 	fields: [
 		{ name: "title", type: "text", required: true },
 		{ name: "icon", type: "select", options: LUCIDE_ICON_NAMES },

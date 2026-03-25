@@ -3,6 +3,11 @@ import { LUCIDE_ICON_NAMES } from "@/constants";
 
 export const CircularGallery: Block = {
 	slug: "CircularGallery",
+	admin: {
+		images: {
+			thumbnail: "/assets/circularGallery.png",
+		},
+	},
 	fields: [
 		{ name: "title", type: "text", required: true },
 		{ name: "icon", type: "select", options: LUCIDE_ICON_NAMES },
