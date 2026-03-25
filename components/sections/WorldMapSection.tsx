@@ -3,7 +3,7 @@ import WorldMap from "@/components/ui/world-map";
 import { motion } from "motion/react";
 import { ReactNode } from "react";
 
-export function WorldMapDemo({ children }: { children: ReactNode }) {
+export function WorldMapSection({ children }: { children: ReactNode }) {
 	return (
 		<div className=" py-40 dark:bg-black bg-white w-full">
 			{/* <div className="max-w-7xl mx-auto text-center">

@@ -57,9 +57,7 @@ export const getAppFont = (appFont: IDesign["appFont"]) => {
 };
 
 export function getRandomNumber(min: number = 0.3, max: number = 1.0): number {
-	// Generate random number, round to 1 decimal, and ensure it's within range
-	// const randomValue = Math.random() * (max - min) + min;
-	// return Math.round(randomValue * 10) / 10;
+	
 	return Math.round(Math.random() * (max - min) + min);
 }
 
@@ -68,6 +66,5 @@ export const getImageUrl = (image: Media | string) => {
 		return image;
 	} else if (typeof image === "object") {
 		return `${process.env.NEXT_PUBLIC_UPLOADTHING_FILE_DOMAIN}/f/${image._key}`;
-		// return `https://qz3p3fxrgr.ufs.sh/f/${image._key}`;
 	}
 };

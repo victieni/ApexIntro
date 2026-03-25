@@ -25,7 +25,7 @@ export default async function Home() {
 
 			<HeroSection />
 
-			<div className="space-y-5 mt-4">
+			<div className="space-y-5 my-4">
 				{sections!.map((s) => (
 					<SectionContainer key={s.id} section={s} />
 				))}

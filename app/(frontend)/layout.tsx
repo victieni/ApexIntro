@@ -6,6 +6,7 @@ import { getAppFont } from "@/lib/utils";
 import type { Metadata } from "next";
 import "../globals.css";
 import { LivePreview } from "@/components/layout/LivePreview";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
 	title: "Apex Intro",
@@ -30,6 +31,7 @@ export default async function RootLayout({
 						<main className="p-3 overflow-x-hidden max-w-screen">
 							{children}
 						</main>
+						<Footer />
 					</Providers>
 				</ScrollArea>
 			</body>

@@ -11,20 +11,52 @@ import {
 	IconBrandTwitter,
 	IconBrandYoutube,
 } from "@tabler/icons-react";
+import { GithubGlobeSection } from "./GithubGlobeSection";
+import { Globe3DSection } from "./Globe3DSection";
+import { WorldMapSection } from "./WorldMapSection";
+import { cn } from "@/lib/utils";
 
 export default async function ContactsSection() {
 	const { contacts } = await getCredentials();
 
- 
+	switch (contacts.CTA_Object) {
+		case "GitHub_Globe":
+			return (
+				<GithubGlobeSection>
+					<ContactsSection.Main contacts={contacts} />
+				</GithubGlobeSection>
+			);
+		case "Globe3D":
+			return (
+				<Globe3DSection>
+					<ContactsSection.Main contacts={contacts} />
+				</Globe3DSection>
+			);
+		case "World_map":
+			return (
+				<WorldMapSection>
+					<ContactsSection.Main contacts={contacts} />
+				</WorldMapSection>
+			);
+
+		default:
+			return <></>;
+	}
 }
 
-ContactsSection.Main = ({contacts}: {contacts: IContacts}) => {
-
-  return <div className="flex flex-col md:flex-row gap-4">
+ContactsSection.Main = ({
+	contacts,
+	className,
+}: {
+	contacts: IContacts;
+	className?: string;
+}) => {
+	return (
+		<div className={cn("flex flex-col md:flex-row gap-4 space-y-4", className)}>
 			<div>
 				<Heading>
 					<Headset />
-					<span>Contacts</span>
+					<span>Contact Us</span>
 				</Heading>
 
 				<div className="flex items-center gap-3">
@@ -36,28 +68,36 @@ ContactsSection.Main = ({contacts}: {contacts: IContacts}) => {
 							<p className="font-medium">{contacts.email}</p>
 						</div>
 
-						<div>
-							<p className="font-medium text-lg">Socials</p>
+						<div className="mt-3">
+							<p className="font-medium text-xl ">Socials</p>
 
-							<div className="flex items-center gap-3 flex-wrap">
+							<div
+								className={cn(
+									"flex  items-center gap-4 flex-wrap",
+
+									contacts.CTA_Object === "GitHub_Globe" && "",
+									// contacts.CTA_Object === "Globe3D" && "flex-row",
+									contacts.CTA_Object === "World_map" && ""
+								)}
+							>
 								{contacts.socialMedia!.map((s) => (
 									<LinkPreview
 										key={s.id}
 										url={s.previewUrl!}
-										className="font-medium flex items-center gap-x-1"
+										className="font-medium hover:text-primary! hover:underline flex items-center gap-x-1"
 									>
 										{s.site === "facebook" ? (
 											<IconBrandFacebook />
 										) : s.site === "instagram" ? (
-											<IconBrandInstagram />
+											<IconBrandInstagram color="pink" />
 										) : s.site === "reddit" ? (
-											<IconBrandReddit />
+											<IconBrandReddit color={"orange"} />
 										) : s.site === "tiktok" ? (
 											<IconBrandTiktok />
 										) : s.site === "twitter" ? (
 											<IconBrandTwitter />
 										) : (
-											<IconBrandYoutube />
+											<IconBrandYoutube color="red" />
 										)}
 
 										<span>{s.displayText}</span>
@@ -69,8 +109,9 @@ ContactsSection.Main = ({contacts}: {contacts: IContacts}) => {
 				</div>
 			</div>
 		</div>
-}
+	);
+};
 
 ContactsSection.Globe3D = () => {
-  return <></>
-}
+	return <></>;
+};

@@ -58,19 +58,21 @@ export const Credentials: GlobalConfig = {
 			fields: [
 				{
 					name: "email",
-					type: "text",
+					type: "email",
 					required: true,
+					unique: true,
 					defaultValue: "codeMedic2@gmail.com",
 				},
 				{
 					name: "phone",
 					type: "text",
+					unique: true,
 					// required: true,
 				},
 				{
 					name: "CTA_Object",
 					type: "select",
-					options: ["Globse3D", "World_map", "GitHub_Globe"],
+					options: ["Globe3D", "World_map", "GitHub_Globe"],
 					defaultValue: "World-map",
 				},
 				{

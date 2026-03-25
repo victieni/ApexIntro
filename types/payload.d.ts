@@ -28442,7 +28442,7 @@ export interface Credential {
   contacts: {
     email: string;
     phone?: string | null;
-    CTA_Object?: ('Globse3D' | 'World_map' | 'GitHub_Globe') | null;
+    CTA_Object?: ('Globe3D' | 'World_map' | 'GitHub_Globe') | null;
     socialMedia?:
       | {
           site: 'twitter' | 'facebook' | 'instagram' | 'youtube' | 'tiktok' | 'reddit';
