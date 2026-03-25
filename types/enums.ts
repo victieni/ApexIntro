@@ -50,6 +50,13 @@ export enum eHeaderFonts {
 	Kenia = "Kenia",
 	KeaniaOne = "Keania_One",
 	audioWide = "audioWide",
+	ZenDots = "Zen_Dots",
+	Orbitron = "Orbitron",
+	BowlbyOne = "Bowlby_One",
+	SpicyRice = "Spicy_Rice",
+	Kavoon = "Kavoon",
+	Notable = "Notable",
+	Fascinate = "Fascinate",
 }
 
 export enum eAppFonts {

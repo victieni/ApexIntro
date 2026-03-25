@@ -11,6 +11,12 @@ import {
 	Roboto,
 	Saira_Stencil_One,
 	Wallpoet,
+	Zen_Dots,
+	Orbitron,
+	Bowlby_One,
+	Spicy_Rice,
+	Kavoon,
+	Notable, Fascinate
 } from "next/font/google";
 
 export const poppinsFont = Poppins({
@@ -94,6 +100,55 @@ export const keniaOneFont = Keania_One({
 });
 
 export const audioWideFont = Audiowide({
+	weight: ["400"],
+	display: "auto",
+	preload: true,
+	subsets: ["latin"],
+});
+
+export const zenDotsFont = Zen_Dots({
+	weight: ["400"],
+	display: "auto",
+	preload: true,
+	subsets: ["latin"],
+});
+
+export const orbitronFont = Orbitron({
+	weight: ["400", "500", "600", "700", "800", "900", "variable"],
+	display: "auto",
+	preload: true,
+	subsets: ["latin"],
+});
+
+export const bowlyOneFont = Bowlby_One({
+	weight: ["400"],
+	display: "auto",
+	preload: true,
+	subsets: ["latin"],
+});
+
+export const spicyRiceFont = Spicy_Rice({
+	weight: ["400"],
+	display: "auto",
+	preload: true,
+	subsets: ["latin"],
+});
+
+export const kavoonFont = Kavoon({
+	weight: ["400"],
+	display: "auto",
+	preload: true,
+	subsets: ["latin"],
+});
+
+export const notableFont = Notable({
+	weight: ["400"],
+	display: "auto",
+	preload: true,
+	subsets: ["latin"],
+});
+
+export const fascinateFont = Fascinate({
 	weight: ["400"],
 	display: "auto",
 	preload: true,

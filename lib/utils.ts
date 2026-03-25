@@ -13,6 +13,13 @@ import {
 	robotoFont,
 	sairaStencilOneFont,
 	wallPoetFont,
+	bowlyOneFont,
+	spicyRiceFont,
+	kavoonFont,
+	notableFont,
+	fascinateFont,
+	orbitronFont,
+	zenDotsFont,
 } from "@/app/fonts";
 import { Media } from "@/types/payload";
 
@@ -34,6 +41,20 @@ export const getHeaderFont = (headerFont: IDesign["headerFont"]) => {
 			return wallPoetFont;
 		case "audioWide":
 			return audioWideFont;
+		case "Bowlby_One":
+			return bowlyOneFont;
+		case "Fascinate":
+			return fascinateFont;
+		case "Kavoon":
+			return kavoonFont;
+		case "Notable":
+			return notableFont;
+		case "Orbitron":
+			return orbitronFont;
+		case "Spicy_Rice":
+			return spicyRiceFont;
+		case "Zen_Dots":
+			return zenDotsFont;
 
 		default:
 			return keniaFont;
@@ -57,7 +78,6 @@ export const getAppFont = (appFont: IDesign["appFont"]) => {
 };
 
 export function getRandomNumber(min: number = 0.3, max: number = 1.0): number {
-	
 	return Math.round(Math.random() * (max - min) + min);
 }
 

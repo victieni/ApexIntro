@@ -28472,7 +28472,14 @@ export interface Design {
     | 'Saira_Stencil_One'
     | 'Kenia'
     | 'Keania_One'
-    | 'audioWide';
+    | 'audioWide'
+    | 'Zen_Dots'
+    | 'Orbitron'
+    | 'Bowlby_One'
+    | 'Spicy_Rice'
+    | 'Kavoon'
+    | 'Notable'
+    | 'Fascinate';
   appFont: 'poppins' | 'Inter' | 'Montserrat' | 'Geist' | 'Roboto';
   _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
