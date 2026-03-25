@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { LivePreview } from "@/components/layout/LivePreview";
 import Footer from "@/components/layout/Footer";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
 	title: "Apex Intro",
@@ -25,6 +26,7 @@ export default async function RootLayout({
 			<body
 				className={` ${getAppFont(appFont).className} antialiased relative`}
 			>
+				<Toaster />
 				<ScrollArea className="h-[100vh]">
 					<Providers>
 						<AppNavbar className="sticky top-5 z-30" />
