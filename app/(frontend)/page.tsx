@@ -19,6 +19,8 @@ import { getSections } from "@/lib/actions/globals.actions";
 export default async function Home() {
 	const { sections } = await getSections();
 
+	console.log("🛎️ Sections:", sections)
+
 	return (
 		<StyledCursor>
 			<LivePreview />

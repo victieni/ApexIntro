@@ -16,7 +16,8 @@ import {
 	Bowlby_One,
 	Spicy_Rice,
 	Kavoon,
-	Notable, Fascinate
+	Notable,
+	Fascinate,
 } from "next/font/google";
 
 export const poppinsFont = Poppins({
@@ -114,7 +115,7 @@ export const zenDotsFont = Zen_Dots({
 });
 
 export const orbitronFont = Orbitron({
-	weight: ["400", "500", "600", "700", "800", "900", "variable"],
+	weight: ["400", "500", "600", "700", "800", "900"],
 	display: "auto",
 	preload: true,
 	subsets: ["latin"],
