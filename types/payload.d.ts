@@ -26557,7 +26557,7 @@ export interface Section {
 export interface Credential {
   id: string;
   appTitle: string;
-  image: string | Media;
+  appLogo?: (string | null) | Media;
   hero: {
     mainText: string;
     highlightText: string;
@@ -26871,7 +26871,7 @@ export interface SectionsSelect<T extends boolean = true> {
  */
 export interface CredentialsSelect<T extends boolean = true> {
   appTitle?: T;
-  image?: T;
+  appLogo?: T;
   hero?:
     | T
     | {

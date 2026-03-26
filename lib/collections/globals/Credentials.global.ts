@@ -14,7 +14,7 @@ export const Credentials: GlobalConfig = {
 	},
 	fields: [
 		{ name: "appTitle", type: "text", required: true },
-		{ name: "image", type: "upload", relationTo: "media", required: true },
+		{ name: "appLogo", type: "upload", relationTo: "media" },
 		{
 			name: "hero",
 			type: "group",
@@ -25,7 +25,7 @@ export const Credentials: GlobalConfig = {
 				{
 					name: "callToActionMessage",
 					type: "text",
-					defaultValue: "Welcome to the future.",
+					defaultValue: "Welcome to the future✨",
 				},
 				{
 					name: "callToActionButtonText",
@@ -44,21 +44,6 @@ export const Credentials: GlobalConfig = {
 				},
 			],
 		},
-
-		// {
-		// 	name: "navItems",
-		// 	type: "array",
-		// 	fields: [
-		// 		{ name: "name", type: "text", required: true },
-		// 		{ name: "link", type: "text", required: true },
-		// 		{
-		// 			name: "icon",
-		// 			type: "select",
-		// 			required: true,
-		// 			options: LUCIDE_ICON_NAMES,
-		// 		},
-		// 	],
-		// },
 		{
 			name: "contacts",
 			type: "group",
@@ -80,7 +65,7 @@ export const Credentials: GlobalConfig = {
 					name: "CTA_Object",
 					type: "select",
 					options: ["Globe3D", "World_map", "GitHub_Globe"],
-					defaultValue: "World-map",
+					defaultValue: "Globe3D",
 				},
 				{
 					name: "socialMedia",
