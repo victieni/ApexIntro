@@ -8,9 +8,6 @@ export default async function Providers({ children }: { children: ReactNode }) {
 	const credentials = await getCredentials();
 	const design = await getDesign();
 
-	console.log("🛎️ credentials:", credentials);
-	console.log("🛎️ designs:", design);
-
 	return (
 		<ThemeProvider
 			attribute="class"

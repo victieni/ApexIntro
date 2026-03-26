@@ -52,7 +52,7 @@ ContactsSection.Main = ({
 	className?: string;
 }) => {
 	return (
-		<div className={cn("flex flex-col md:flex-row gap-4 space-y-4", className)}>
+		<div id="#contacts"   className={cn("flex flex-col md:flex-row gap-4 space-y-4", className)}>
 			<div>
 				<Heading>
 					<Headset />

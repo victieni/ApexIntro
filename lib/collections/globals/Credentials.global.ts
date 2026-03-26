@@ -14,6 +14,7 @@ export const Credentials: GlobalConfig = {
 	},
 	fields: [
 		{ name: "appTitle", type: "text", required: true },
+		{ name: "image", type: "upload", relationTo: "media", required: true },
 		{
 			name: "hero",
 			type: "group",
@@ -44,20 +45,20 @@ export const Credentials: GlobalConfig = {
 			],
 		},
 
-		{
-			name: "navItems",
-			type: "array",
-			fields: [
-				{ name: "name", type: "text", required: true },
-				{ name: "link", type: "text", required: true },
-				{
-					name: "icon",
-					type: "select",
-					required: true,
-					options: LUCIDE_ICON_NAMES,
-				},
-			],
-		},
+		// {
+		// 	name: "navItems",
+		// 	type: "array",
+		// 	fields: [
+		// 		{ name: "name", type: "text", required: true },
+		// 		{ name: "link", type: "text", required: true },
+		// 		{
+		// 			name: "icon",
+		// 			type: "select",
+		// 			required: true,
+		// 			options: LUCIDE_ICON_NAMES,
+		// 		},
+		// 	],
+		// },
 		{
 			name: "contacts",
 			type: "group",

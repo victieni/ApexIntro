@@ -15,17 +15,35 @@ import {
 } from "../ui/resizable-navbar";
 import { useCredentials } from "@/contexts/credentials.context";
 import Link from "next/link";
-import { DynamicIcon } from "lucide-react/dynamic";
+import { DynamicIcon, type IconName } from "lucide-react/dynamic";
+import toast from "react-hot-toast";
 
-export default function AppNavbar({
-	className,
-}: // ...props
-ComponentProps<"nav">) {
+const navItems: {
+	name: string;
+	icon: IconName;
+	link: string;
+}[] = [
+	{
+		name: "Home",
+		link: "#home",
+		icon: "home",
+	},
+	{ name: "About", link: "#about", icon: "notebook-tabs" },
+	{ name: "Contacts", link: "#contacts", icon: "headset" },
+];
+
+export default function AppNavbar({ className }: ComponentProps<"nav">) {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 	const {
-		credentials: { navItems },
+		credentials: { hero },
 	} = useCredentials();
+
+	const clickHandler = () => {
+		toast.success(hero.callToActionMessage || "Lets build the futures✨", {
+			id: "dsdew4",
+		});
+	};
 
 	return (
 		<Navbar className={className}>
@@ -35,7 +53,9 @@ ComponentProps<"nav">) {
 				<NavItems items={navItems!} />
 
 				<div className="flex items-center gap-3">
-					<NavbarButton variant={"accent"}>Sign In</NavbarButton>
+					<NavbarButton variant={"accent"} onClick={clickHandler}>
+						{hero.callToActionButtonText}
+					</NavbarButton>
 					{/* <ThemeBtn /> */}
 				</div>
 			</NavBody>
@@ -66,11 +86,14 @@ ComponentProps<"nav">) {
 					))}
 					<div className="flex w-full flex-col gap-4">
 						<NavbarButton
-							onClick={() => setIsMobileMenuOpen(false)}
+							onClick={() => {
+								setIsMobileMenuOpen(false);
+								clickHandler();
+							}}
 							variant={"accent"}
-							// as={"button"}
+							as={"button"}
 						>
-							Sign In
+							{hero.callToActionButtonText}
 						</NavbarButton>
 						{/* <ThemeBtn /> */}
 					</div>

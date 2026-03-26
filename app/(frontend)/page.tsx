@@ -19,21 +19,19 @@ import { getSections } from "@/lib/actions/globals.actions";
 export default async function Home() {
 	const { sections } = await getSections();
 
-	console.log("🛎️ Sections:", sections)
-
 	return (
 		<StyledCursor>
 			<LivePreview />
 
-			<HeroSection />
+			<HeroSection id="#home" />
 
-			<div className="space-y-5 my-4">
+			<div id="#about" className="space-y-5 my-4">
 				{sections!.map((s) => (
 					<SectionContainer key={s.id} section={s} />
 				))}
 			</div>
 
-			<ContactsSection />
+			<ContactsSection  />
 		</StyledCursor>
 	);
 }
