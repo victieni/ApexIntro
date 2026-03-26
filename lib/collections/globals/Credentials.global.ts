@@ -1,4 +1,3 @@
-import { LUCIDE_ICON_NAMES } from "@/constants";
 import { updateGlobals } from "@/lib/actions/mutation.actions";
 import { eHeroBg } from "@/types/enums";
 import type { GlobalConfig } from "payload";
@@ -8,7 +7,7 @@ export const Credentials: GlobalConfig = {
 	versions: {
 		drafts: {
 			autosave: {
-				interval: 100, // ? Best for optimal live preview.
+				interval: 100,
 			},
 		},
 	},
